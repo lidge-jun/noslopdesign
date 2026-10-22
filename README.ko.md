@@ -92,6 +92,22 @@ git clone https://github.com/lidge-jun/noslopdesign && cd noslopdesign
 
 ## 무엇을 slop으로 보나
 
+스킬 없이도 린터만 따로 돌릴 수 있습니다.
+
+```bash
+node skills/noslop-frontend/scripts/sloplint.mjs ./index.html
+```
+
+결과는 세 단계로 나뉩니다. **Floor**는 절대 내보내지 않는 것(줌 차단, 포커스 링 제거, 자리표시 문구,
+이모지 아이콘), **Reflex**는 모델이 습관처럼 넣는 것(보라 그라데이션, 그라데이션 글자, Inter만 쓰기,
+유행어, 근거 없는 수치)으로 `noslop-allow NS-RULE-ID: 이유`를 적어야만 남길 수 있고, **Finish**는
+다듬기 항목이라 막지 않습니다. 리디자인 때는 `--inventory before.json`으로 링크·입력·핸들러·제목을
+기록하고 `--kept before.json`으로 빠진 게 있으면 실패시킵니다.
+
+모드로 작업 범위를 좁힐 수 있습니다: `$noslop-frontend audit ./index.html`, `redesign`, `polish`,
+`critique`, `bolder`, `quieter`, `harden`. 방향이 정해지면 `noslop-uiux`가 `DESIGN.md`에 적어 두어 다음
+실행도 같은 디자인으로 만듭니다.
+
 [`anti-slop.md`](skills/noslop-frontend/references/core/anti-slop.md)에 백 개가 넘는 항목이 있습니다. 몇 가지만 들면:
 
 - 어디에나 Inter, 또는 "Inter 말고"의 자동 선택인 Space Grotesk.

@@ -29,6 +29,10 @@ For rendered anti-slop tell detection and implementation-level banned patterns, 
 
 Work sizes (C0 to C4) and rule classes (STRICT, DEFAULT, HEURISTIC, STYLE_SAMPLE, ESCALATE) are defined in [noslop-frontend](../noslop-frontend/SKILL.md#work-size).
 
+If the project has a `DESIGN.md`, read it first and treat it as the brief. Once a direction is locked,
+write or update `DESIGN.md` at the project root per [DESIGN.md protocol](references/design-md.md), so later
+runs and other agents build the same design.
+
 Concept mockups use [ima2-gen](https://github.com/lidge-ai/ima2-gen) when it is installed. Where the
 references say `$imagegen`, read it as the agent's own image tool: Codex `$imagegen`, or any image
 generation tool or MCP server in Claude Code and other agents.

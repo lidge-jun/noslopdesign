@@ -7,8 +7,12 @@
 export const UPSTREAM_REPO = 'https://github.com/lidge-jun/codexclaw';
 
 export const SKILL_MAP = [
-  { from: 'plugins/codexclaw/skills/dev-frontend', to: 'skills/noslop-frontend', owned: ['references/core/iterative-design.md'] },
-  { from: 'plugins/codexclaw/skills/dev-uiux-design', to: 'skills/noslop-uiux', owned: [] },
+  {
+    from: 'plugins/codexclaw/skills/dev-frontend',
+    to: 'skills/noslop-frontend',
+    owned: ['references/core/iterative-design.md', 'references/core/interface-guidelines.md', 'scripts/sloplint.mjs'],
+  },
+  { from: 'plugins/codexclaw/skills/dev-uiux-design', to: 'skills/noslop-uiux', owned: ['references/design-md.md'] },
 ];
 
 // Paths (relative to a skill folder) that every skill owns.

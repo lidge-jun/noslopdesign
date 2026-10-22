@@ -26,8 +26,40 @@ run its Design Read, lock one direction, then come back here to build.
 2. Vague or brand-visible brief: run [noslop-uiux](../noslop-uiux/SKILL.md) intent discovery and Design Read before code.
 3. Load the references the table below names for this work, nothing more.
 4. Build with real content and real assets; no placeholder gradients or icon-card filler.
-5. Render it in a real browser at mobile, tablet and desktop widths and run the anti-slop checks.
+5. Run `scripts/sloplint.mjs` on the changed files, then render in a real browser at mobile, tablet and desktop widths and run the anti-slop checks.
 6. Fix what the screenshots show, then report what was checked and how.
+
+## Modes
+
+Name a mode after the skill to narrow the job. Without one, the skill builds or fixes what you asked for.
+
+| Mode | Does |
+|---|---|
+| `build` (default) | Size, route, direction, build, browser check, fix |
+| `redesign <path>` | Rebuild an existing page in a new system; keep its content and wiring (`sloplint --inventory` before, `--kept` after) |
+| `polish <path>` | Remove the tells only; keep layout and system |
+| `audit <path>` | Report only: sloplint, interface guidelines, pre-flight. No edits |
+| `critique <path>` | Design review of hierarchy, clarity and fit to the job; hand direction changes to noslop-uiux |
+| `bolder` / `quieter` | Push contrast, scale and color up or down inside the current direction |
+| `harden <path>` | Error, empty, loading, long-content, i18n and offline states |
+
+Example: `$noslop-frontend audit ./index.html`. The command vocabulary follows
+[impeccable](https://github.com/pbakaus/impeccable) and [Hallmark](https://github.com/Nutlope/hallmark).
+
+## Gates
+
+Every finding falls in one of three tiers (after Hallmark's Floor/Reflex/Finish):
+
+- **Floor** = STRICT. Never ships: blocked zoom, removed focus, placeholder content, emoji icons,
+  broken phone layout, invented facts, contrast below WCAG AA.
+- **Reflex** = DEFAULT. The defaults a model falls into: purple gradients, gradient text, Inter-only,
+  buzzwords, vanity metrics, icon tiles, eyebrow labels. A build may keep one only with a stated
+  reason, written in the file as `noslop-allow NS-RULE-ID: reason`.
+- **Finish** = HEURISTIC. Craft detail that never blocks a ship.
+
+[`scripts/sloplint.mjs`](scripts/sloplint.mjs) checks the static tells with no dependencies:
+`node <skill>/scripts/sloplint.mjs <file-or-dir>`. Run it before the browser check and fix what it
+reports; it does not replace looking at the screenshots.
 
 ## Work size
 
@@ -69,6 +101,7 @@ Size, naming, layout and style rules are DEFAULT or STYLE_SAMPLE unless the user
 | API consumption, security UI or contract fixtures | [Backend contracts](references/core/backend-contracts.md) |
 | Any render/executable frontend artifact | [Verification grounding](references/core/render-grounding.md) |
 | Before shipping a production frontend surface at C2+ | [Full pre-flight](references/core/preflight-full.md) |
+| Interaction and rendering details on any C2+ screen | [Interface guidelines](references/core/interface-guidelines.md) |
 
 Start with `references/core/anti-slop.md`, `references/core/aesthetics.md`, `references/core/responsive-viewport.md`, and `references/core/visual-verification.md`. Add domain/locale/stack references only when relevant.
 For C2 ordinary app screens (form/table/list/detail), `references/core/crud-ui.md` alone suffices; add the style references above for marketing/visual surfaces or C3+ work.

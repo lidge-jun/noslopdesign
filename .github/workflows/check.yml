@@ -26,6 +26,8 @@ jobs:
           shopt -s nullglob
           for f in install.sh skills/*/scripts/*.sh; do bash -n "$f"; done
           bash install.sh --list
+      - name: sloplint tests
+        run: node --test tests/sloplint.test.mjs
       - name: Synced files match the pinned upstream commit
         run: |
           commit="$(node -p "require('./upstream.json').commit")"

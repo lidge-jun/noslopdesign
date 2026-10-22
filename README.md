@@ -94,6 +94,23 @@ image tool.
 
 ## What counts as slop
 
+Run the linter on any page, with or without the skill:
+
+```bash
+node skills/noslop-frontend/scripts/sloplint.mjs ./index.html
+```
+
+It sorts findings into three tiers. **Floor** never ships (blocked zoom, removed focus ring,
+placeholder copy, emoji icons). **Reflex** is a default a model falls into (purple gradients,
+gradient text, Inter-only, buzzwords, vanity metrics); keep one only with a written
+`noslop-allow NS-RULE-ID: reason`. **Finish** is craft detail and never blocks. For redesigns,
+`--inventory before.json` records every link, field, handler and heading, and `--kept before.json`
+fails if one went missing.
+
+Modes narrow the job: `$noslop-frontend audit ./index.html`, `redesign`, `polish`, `critique`,
+`bolder`, `quieter`, `harden`. Once a direction is chosen, `noslop-uiux` writes it to `DESIGN.md` so the
+next run builds the same design.
+
 The catalog in [`anti-slop.md`](skills/noslop-frontend/references/core/anti-slop.md) covers more than
 a hundred tells. A few of them:
 

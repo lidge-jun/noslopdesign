@@ -1,6 +1,6 @@
 {
   "name": "noslopdesign",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Anti-slop design skills for coding agents: noslop-frontend builds pages and app screens that do not look AI-made, noslop-uiux decides the direction first.",
   "author": {
     "name": "lidge-jun",
