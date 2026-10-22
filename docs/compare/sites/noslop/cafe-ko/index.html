@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>굽 커피 · 성수동 연무장길 동네 카페</title>
+  <meta name="description" content="성수동 구두 공방 건물 1층의 동네 카페. 매주 볶는 원두와 아침에 굽는 스콘. 메뉴, 영업시간, 오시는 길.">
+  <meta property="og:title" content="굽 커피 · 성수동 동네 카페">
+  <meta property="og:description" content="구두 골목 안쪽, 화요일부터 일요일까지 문을 엽니다.">
+  <meta property="og:image" content="assets/storefront.webp">
+  <meta name="theme-color" content="#eceeec">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.0.13/400.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.0.13/500.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+
+  <header class="top">
+    <a class="brand" href="#main" aria-label="굽 커피 처음으로">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 9h17c4 0 7 3 7 7v3H17l-3 6H6l-2-6z" /></svg>
+      <span class="brand-ko">굽 커피</span>
+      <span class="brand-en">GUP COFFEE</span>
+    </a>
+    <nav aria-label="주요 메뉴">
+      <ul>
+        <li><a href="#menu">메뉴</a></li>
+        <li><a href="#hours">영업시간</a></li>
+        <li><a href="#location">오시는 길</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">구두 골목 안쪽에서<br>아침 여덟 시에 <br class="br-wide">문을 엽니다</h1>
+        <p class="lede">성수동 연무장길, 40년 된 구두 공방 건물 1층입니다. 원두는 매주 화요일에 조금씩 볶고, 스콘은 문 열기 전에 굽습니다.</p>
+        <p class="status" id="status" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">화–금 08:00–20:00 · 주말 10:00–21:00 · 월요일 휴무</span>
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#menu">메뉴 보기</a>
+          <a class="btn btn-line" href="#location">오시는 길</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/storefront.webp" srcset="assets/storefront-900.webp 900w, assets/storefront.webp 1600w" sizes="(min-width: 960px) 58vw, 100vw" width="1600" height="1067" alt="붉은 벽돌 외벽의 굽 커피 매장. 큰 창 너머로 손님들이 바 테이블에 앉아 있고, 열린 문 안쪽에서 바리스타가 커피를 내린다." fetchpriority="high">
+        <figcaption>연무장길 쪽 입구. 선반의 나무 구두 골은 건물 2층 공방에서 받아 온 것입니다.</figcaption>
+      </figure>
+    </section>
+
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <div class="section-head">
+        <h2 id="menu-title">메뉴</h2>
+        <p>모든 커피는 디카페인 원두로 바꿀 수 있습니다(+500원). 포장 가격도 같습니다.</p>
+      </div>
+
+      <div class="menu-grid">
+        <figure class="menu-photo">
+          <img src="assets/counter.webp" width="1000" height="1000" loading="lazy" alt="콘크리트 카운터 위의 플랫화이트, 유리 서버에 담긴 핸드드립 커피, 유산지 위의 버터 스콘">
+          <figcaption>플랫화이트, 오늘의 필터, 버터 스콘</figcaption>
+        </figure>
+
+        <div class="menu-lists">
+          <div class="menu-group">
+            <h3>커피</h3>
+            <ul class="items">
+              <li><span class="name">아메리카노</span><span class="price">4,800</span></li>
+              <li><span class="name">카페 라테</span><span class="price">5,300</span></li>
+              <li><span class="name">플랫화이트</span><span class="price">5,500</span></li>
+              <li><span class="name">굽 크림 라테<small>흑설탕 시럽과 손으로 친 크림, 차갑게만</small></span><span class="price">6,300</span></li>
+              <li><span class="name">오늘의 필터<small>이번 주는 에티오피아 구지, 살구와 홍차 향</small></span><span class="price">6,000</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-group">
+            <h3>커피 말고</h3>
+            <ul class="items">
+              <li><span class="name">볶은 보리 라테</span><span class="price">5,800</span></li>
+              <li><span class="name">말차 라테</span><span class="price">6,000</span></li>
+              <li><span class="name">유자 소다<small>고흥 유자청을 매장에서 담급니다</small></span><span class="price">6,000</span></li>
+              <li><span class="name">따뜻한 우롱차</span><span class="price">5,500</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-group">
+            <h3>굽는 것</h3>
+            <ul class="items">
+              <li><span class="name">버터 스콘</span><span class="price">3,800</span></li>
+              <li><span class="name">무화과 스콘</span><span class="price">4,300</span></li>
+              <li><span class="name">쑥 휘낭시에</span><span class="price">2,900</span></li>
+              <li><span class="name">바스크 치즈케이크<small>주말에만, 하루 열두 조각</small></span><span class="price">6,500</span></li>
+            </ul>
+            <p class="note">스콘은 보통 오후 세 시쯤 다 나갑니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hours" id="hours" aria-labelledby="hours-title">
+      <div class="section-head">
+        <h2 id="hours-title">영업시간</h2>
+        <p>마지막 주문은 닫기 30분 전까지 받습니다. 공휴일 영업은 매장 앞 칠판에 일주일 전에 적어 둡니다.</p>
+      </div>
+      <table class="week">
+        <caption class="sr-only">요일별 영업시간</caption>
+        <tbody>
+          <tr data-day="1"><th scope="row">월</th><td class="closed">정기 휴무</td></tr>
+          <tr data-day="2"><th scope="row">화</th><td>08:00 – 20:00</td></tr>
+          <tr data-day="3"><th scope="row">수</th><td>08:00 – 20:00</td></tr>
+          <tr data-day="4"><th scope="row">목</th><td>08:00 – 20:00</td></tr>
+          <tr data-day="5"><th scope="row">금</th><td>08:00 – 20:00</td></tr>
+          <tr data-day="6"><th scope="row">토</th><td>10:00 – 21:00</td></tr>
+          <tr data-day="0"><th scope="row">일</th><td>10:00 – 21:00</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="location" id="location" aria-labelledby="location-title">
+      <div class="section-head">
+        <h2 id="location-title">오시는 길</h2>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-text">
+          <p class="address">서울 성동구 연무장길 41-2, 1층</p>
+          <ol class="route">
+            <li>2호선 성수역 3번 출구로 나와 뒤로 돌아 첫 골목으로 들어갑니다.</li>
+            <li>연무장길을 만나면 오른쪽으로, 구두 수선집 두 곳을 지나 걷습니다.</li>
+            <li>붉은 벽돌 건물, 철제 문이 열려 있는 곳입니다. 역에서 걸어서 6분쯤 걸립니다.</li>
+          </ol>
+          <p class="note">매장 주차는 안 됩니다. 반려견은 바깥 벤치 자리에서 함께하실 수 있습니다.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://map.naver.com/p/search/%EC%84%B1%EC%88%98%EB%8F%99%20%EC%97%B0%EB%AC%B4%EC%9E%A5%EA%B8%B8" target="_blank" rel="noopener">네이버 지도에서 보기</a>
+            <a class="btn btn-line" href="https://map.kakao.com/?q=%EC%84%B1%EC%88%98%EB%8F%99%20%EC%97%B0%EB%AC%B4%EC%9E%A5%EA%B8%B8" target="_blank" rel="noopener">카카오맵</a>
+          </div>
+        </div>
+        <figure class="map">
+          <svg viewBox="0 0 640 420" role="img" aria-labelledby="map-title map-desc">
+            <title id="map-title">굽 커피 약도</title>
+            <desc id="map-desc">성수역 3번 출구에서 골목을 따라 연무장길로 내려와 동쪽으로 걸으면 굽 커피가 있습니다.</desc>
+            <rect class="m-block" x="20" y="130" width="160" height="90"/>
+            <rect class="m-block" x="232" y="130" width="230" height="90"/>
+            <rect class="m-block" x="514" y="130" width="106" height="90"/>
+            <rect class="m-block" x="20" y="282" width="160" height="118"/>
+            <rect class="m-block" x="232" y="282" width="230" height="118"/>
+            <rect class="m-block" x="514" y="282" width="106" height="118"/>
+            <rect class="m-road" x="0" y="60" width="640" height="46"/>
+            <line class="m-rail" x1="0" y1="83" x2="640" y2="83"/>
+            <rect class="m-road" x="0" y="232" width="640" height="38"/>
+            <rect class="m-road" x="188" y="106" width="36" height="314"/>
+            <rect class="m-road" x="470" y="106" width="36" height="314"/>
+            <rect class="m-station" x="96" y="66" width="120" height="34" rx="3"/>
+            <text class="m-station-t" x="156" y="88">성수역</text>
+            <circle class="m-exit" cx="206" cy="118" r="11"/>
+            <text class="m-exit-t" x="206" y="122">3</text>
+            <path class="m-walk" d="M206 132 V251 H392"/>
+            <rect class="m-cafe" x="384" y="206" width="54" height="40" rx="2"/>
+            <text class="m-cafe-t" x="411" y="231">굽</text>
+            <text class="m-label" x="620" y="52">아차산로 · 2호선</text>
+            <text class="m-label" x="620" y="258">연무장길</text>
+            <text class="m-label m-label-v" x="0" y="0" transform="translate(493 400) rotate(-90)">성수이로</text>
+            <g class="m-north" transform="translate(40 26)"><path d="M0 -14 L7 8 L0 3 L-7 8z"/><text x="0" y="24">N</text></g>
+          </svg>
+          <figcaption>약도이며 실제 거리와 비율은 다릅니다.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p><strong>굽 커피</strong> 서울 성동구 연무장길 41-2, 1층</p>
+    <p>화–금 08:00–20:00 · 토·일 10:00–21:00 · 월요일 휴무</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

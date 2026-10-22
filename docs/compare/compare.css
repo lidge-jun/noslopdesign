@@ -1,0 +1,25 @@
+.cmp { width: var(--wrap); margin: 0 auto; }
+.cmp-head { padding: 64px 0 40px; max-width: 52em; }
+.cmp-head h1 { font: 700 clamp(40px, 5.6vw, 72px)/1 var(--cond); letter-spacing: -0.02em; margin-top: 18px; }
+.cmp-head h1 em { font-style: normal; color: var(--pencil); }
+.method { font-size: 14px; color: var(--ink-2); margin-top: 18px; max-width: 46em; }
+.matrix { overflow-x: auto; border-top: 1.5px solid var(--ink); margin-bottom: 64px; }
+.matrix:focus-visible { outline: 2px solid var(--pencil); outline-offset: 4px; }
+.matrix table { border-collapse: collapse; width: 100%; min-width: 1080px; table-layout: fixed; }
+.matrix thead th:first-child { width: 170px; }
+.matrix thead th { text-align: left; vertical-align: bottom; padding: 18px 16px 14px 0; font: 700 22px/1.1 var(--cond); border-bottom: 1px solid var(--rule); }
+.matrix thead th span { display: block; font: 400 12px/1.4 var(--mono); color: var(--ink-2); margin-top: 6px; }
+.matrix thead th:last-child { color: var(--pencil); }
+.matrix tbody th { width: 200px; text-align: left; vertical-align: top; padding: 22px 18px 22px 0; border-bottom: 1px solid var(--rule); }
+.prompt { margin: 0; font: 400 14px/1.5 var(--mono); }
+.prompt[lang="ko"] { word-break: keep-all; }
+.cell { vertical-align: top; padding: 22px 16px 22px 0; border-bottom: 1px solid var(--rule); }
+.shot { position: relative; display: block; border: 1px solid var(--ink); background: #fff; overflow: hidden; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot img.m { position: absolute; right: 8px; bottom: 8px; width: 17%; height: auto; border: 1px solid var(--ink); box-shadow: 0 6px 18px rgb(20 21 24 / 0.18); }
+.shot:hover { outline: 2px solid var(--pencil); outline-offset: 2px; }
+.lint { margin: 10px 0 0; font-size: 13px; color: var(--ink-2); }
+.lint code { font-size: 12px; }
+.clean { color: #1f6b3a; font-weight: 500; }
+.dirty { color: var(--pencil); font-weight: 500; }
+.missing p { color: var(--ink-2); font-size: 14px; }

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kestrel: October overview</title>
+<meta name="description" content="Personal finance overview: account balances, monthly spending by category and recent transactions.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/public-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#main" aria-label="Kestrel overview">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 L10 7 L14 13 L21 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="4" r="2" fill="currentColor"/></svg>
+      <span>Kestrel</span>
+    </a>
+    <nav class="sections" aria-label="Sections">
+      <a href="#spending">Spending</a>
+      <a href="#accounts">Accounts</a>
+      <a href="#transactions">Transactions</a>
+    </nav>
+    <div class="who" aria-label="Signed in as Ines Varga">
+      <span class="initials" aria-hidden="true">IV</span>
+      <span class="who-name">Ines Varga</span>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page">
+  <div class="page-head">
+    <div>
+      <h1 id="page-title">October 2026</h1>
+      <p class="sub" id="page-sub"></p>
+    </div>
+    <div class="months" role="group" aria-label="Choose month" id="month-switch"></div>
+  </div>
+
+  <div class="grid">
+    <section class="panel spending" id="spending" aria-labelledby="spending-h">
+      <div class="panel-head">
+        <h2 id="spending-h">Spending by category</h2>
+        <button class="link-btn" type="button" id="clear-cat" hidden>Show all categories</button>
+      </div>
+      <div class="spend-summary">
+        <div>
+          <p class="big num" id="spent-total"></p>
+          <p class="muted" id="spent-detail"></p>
+        </div>
+        <p class="pace" id="pace-note"></p>
+      </div>
+      <figure class="pace-chart">
+        <div id="pace-svg"></div>
+        <figcaption class="legend">
+          <span><i class="key key-now"></i><span id="legend-now">October</span></span>
+          <span><i class="key key-prev"></i><span id="legend-prev">September</span></span>
+          <span><i class="key key-budget"></i>Monthly budget</span>
+        </figcaption>
+      </figure>
+      <ul class="cats" id="cat-list" aria-label="Categories. Select one to filter transactions."></ul>
+    </section>
+
+    <section class="panel accounts" id="accounts" aria-labelledby="accounts-h">
+      <div class="panel-head">
+        <h2 id="accounts-h">Accounts</h2>
+        <span class="muted small">Synced 8:14 AM</span>
+      </div>
+      <div class="networth">
+        <p class="muted small">Net worth</p>
+        <p class="big num" id="networth"></p>
+        <p class="small" id="networth-change"></p>
+      </div>
+      <div id="account-groups"></div>
+    </section>
+
+    <section class="panel txns" id="transactions" aria-labelledby="txns-h">
+      <div class="panel-head">
+        <h2 id="txns-h">Recent transactions</h2>
+        <span class="muted small" id="txn-count" aria-live="polite"></span>
+      </div>
+      <div class="toolbar">
+        <label class="field search">
+          <span class="visually-hidden">Search transactions</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="q" type="search" placeholder="Search merchant or note" autocomplete="off">
+        </label>
+        <label class="field">
+          <span class="visually-hidden">Category</span>
+          <select id="cat-filter"></select>
+        </label>
+        <label class="field">
+          <span class="visually-hidden">Account</span>
+          <select id="acct-filter"></select>
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table class="ledger">
+          <thead>
+            <tr><th scope="col">Date</th><th scope="col">Merchant</th><th scope="col">Category</th><th scope="col">Account</th><th scope="col" class="r">Amount</th></tr>
+          </thead>
+          <tbody id="txn-body"></tbody>
+        </table>
+        <div class="empty" id="txn-empty" hidden>
+          <p><strong>No transactions match these filters.</strong></p>
+          <p class="muted">Try a different search, or clear the filters to see everything from this month.</p>
+          <button type="button" class="btn" id="reset-filters">Clear filters</button>
+        </div>
+      </div>
+      <button type="button" class="more-btn" id="show-all" aria-controls="txn-body" hidden>Show all transactions</button>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <p>Balances update when your banks sync, usually every few hours. Pending card charges may change.</p>
+  <p><a href="privacy.html">Privacy</a> <a href="terms.html">Terms</a></p>
+</footer>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+

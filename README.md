@@ -85,6 +85,10 @@ image tool.
 
 ## How a build runs
 
+See the same four prompts run with no skill, with taste-skill and with noslopdesign on one model and
+machine: [lidge-jun.github.io/noslopdesign/compare](https://lidge-jun.github.io/noslopdesign/compare/).
+
+
 1. Sizes the work, from a copy fix to a new brand-visible surface, and spends effort to match.
 2. Classifies the surface: landing, app, dashboard, AI tool; locale; density; asset and motion needs.
 3. For a vague or brand-visible brief, runs a Design Read and locks one direction before any code.

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pocketbook — Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#" aria-label="Pocketbook home">
+        <span class="brand__mark" aria-hidden="true"></span>Pocketbook
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#" aria-current="page">Overview</a>
+        <a href="#accounts">Accounts</a>
+        <a href="#spending">Spending</a>
+        <a href="#transactions">Transactions</a>
+      </nav>
+      <div class="avatar" aria-label="Signed in as Maya Chen">MC</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page__head">
+      <div>
+        <p class="eyebrow">Good evening, Maya</p>
+        <h1>October 2026</h1>
+      </div>
+      <p class="muted page__sync">Synced 4 minutes ago</p>
+    </div>
+
+    <section class="stats" aria-label="Summary" id="stats"></section>
+
+    <div class="grid">
+      <section class="card card--accounts" id="accounts" aria-labelledby="accounts-title">
+        <div class="card__head">
+          <h2 id="accounts-title">Accounts</h2>
+          <span class="muted" id="accounts-count"></span>
+        </div>
+        <ul class="accounts" id="accounts-list"></ul>
+      </section>
+
+      <section class="card card--spending" id="spending" aria-labelledby="spending-title">
+        <div class="card__head">
+          <h2 id="spending-title">Spending by category</h2>
+          <span class="muted">Oct 1 – Oct 22</span>
+        </div>
+        <div class="spending">
+          <figure class="donut" id="donut"></figure>
+          <ul class="cats" id="cats"></ul>
+        </div>
+        <div class="trend">
+          <h3>Last 6 months</h3>
+          <div class="trend__chart" id="trend"></div>
+        </div>
+      </section>
+
+      <section class="card card--tx" id="transactions" aria-labelledby="tx-title">
+        <div class="card__head">
+          <h2 id="tx-title">Recent transactions</h2>
+          <a class="link" href="#">View all</a>
+        </div>
+        <div class="tx" role="table" aria-label="Recent transactions">
+          <div class="tx__row tx__row--head" role="row">
+            <span role="columnheader">Date</span>
+            <span role="columnheader">Description</span>
+            <span role="columnheader">Category</span>
+            <span role="columnheader">Account</span>
+            <span role="columnheader" class="num">Amount</span>
+          </div>
+          <div id="tx-body" role="rowgroup"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
+

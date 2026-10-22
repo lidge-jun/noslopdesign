@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Punchlist: issue tracking for teams of 2–15</title>
+<meta name="description" content="Punchlist is a keyboard-first issue tracker for engineering teams of 2 to 15. Weekly cycles that close on Friday, Git built in, $48 a month for the whole team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="wordmark" href="#top" aria-label="Punchlist, back to top">
+    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="9" fill="currentColor"/><circle cx="9" cy="9" r="3.5" fill="#0a0d14"/></svg>
+    Punchlist
+  </a>
+  <nav aria-label="Main">
+    <a class="link" href="#paste">Product</a>
+    <a class="link" href="#flow">Workflow</a>
+    <a class="link" href="#pricing">Pricing</a>
+    <a class="link" href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <h1 data-r>Issue tracking for<br> teams of 2–15</h1>
+    <p class="hero-lead" data-r>Punchlist is a keyboard-first tracker for small engineering teams: one shared list, weekly cycles that close on Friday, and one price for everyone.</p>
+    <a class="btn" href="#start" data-r>Start a 30-day trial</a>
+  </div>
+
+  <div class="stage-wrap shutter">
+    <div class="stage">
+      <div class="app hero-app" data-ui id="punchlist" aria-label="Try it: a working Punchlist issue list">
+        <div class="app-head">
+          <div class="crumbs"><span class="team-mark" aria-hidden="true">P</span><span>Platform</span><span class="faint">/</span><span>Cycle 42</span></div>
+          <div class="cycle-meta"><span class="num" id="punched-n">12</span> of <span class="num" id="total-n">19</span> punched, closes Fri 17:00</div>
+        </div>
+        <div class="tabs" aria-hidden="true">
+          <span class="tab is-on">Open <span class="num faint" id="open-n">7</span></span>
+          <span class="tab">Triage <span class="num faint">3</span></span>
+          <span class="tab">Punched <span class="num faint" id="punched-tab-n">12</span></span>
+        </div>
+        <ul class="rows" id="rows" aria-label="Open issues in cycle 42">
+          <li class="row is-sel" data-id="PUN-214"><button class="punch" type="button" aria-label="Punch PUN-214"></button><span class="pri pri-4" title="Urgent"></span><span class="id">PUN-214</span><span class="t">Login redirect loops when the session cookie expires</span><span class="tag">bug</span><span class="who" title="Priya">PR</span></li>
+          <li class="row" data-id="PUN-221"><button class="punch" type="button" aria-label="Punch PUN-221"></button><span class="pri pri-3" title="High"></span><span class="id">PUN-221</span><span class="t">Stripe webhook retries create duplicate invoices</span><span class="tag">bug</span><span class="who" title="Tomás">TA</span></li>
+          <li class="row" data-id="PUN-230"><button class="punch" type="button" aria-label="Punch PUN-230"></button><span class="pri pri-3" title="High"></span><span class="id">PUN-230</span><span class="t">Rate-limit the public search endpoint</span><span class="tag">api</span><span class="who" title="Ines">IM</span></li>
+          <li class="row" data-id="PUN-209"><button class="punch" type="button" aria-label="Punch PUN-209"></button><span class="pri pri-2" title="Medium"></span><span class="id">PUN-209</span><span class="t">Move image uploads to signed S3 URLs</span><span class="tag">infra</span><span class="who" title="Kofi">KO</span></li>
+          <li class="row" data-id="PUN-218"><button class="punch" type="button" aria-label="Punch PUN-218"></button><span class="pri pri-2" title="Medium"></span><span class="id">PUN-218</span><span class="t">Upgrade staging Postgres to 16.4</span><span class="tag">infra</span><span class="who" title="Devon">DL</span></li>
+          <li class="row" data-id="PUN-224"><button class="punch" type="button" aria-label="Punch PUN-224"></button><span class="pri pri-2" title="Medium"></span><span class="id">PUN-224</span><span class="t">Flaky test: checkout total rounding in EUR</span><span class="tag">test</span><span class="who" title="Priya">PR</span></li>
+          <li class="row" data-id="PUN-226"><button class="punch" type="button" aria-label="Punch PUN-226"></button><span class="pri pri-1" title="Low"></span><span class="id">PUN-226</span><span class="t">Empty state for projects with no members</span><span class="tag">design</span><span class="who" title="Mara">MS</span></li>
+        </ul>
+        <div class="app-foot"><span><kbd>J</kbd><kbd>K</kbd> move</span><span><kbd>X</kbd> punch</span><span><kbd>C</kbd> new issue</span><span class="faint" id="hint">Try it: punch one</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paste" id="paste" aria-labelledby="paste-h">
+  <div class="paste-in">
+    <label class="paste-label" for="paste-input">Paste a message from Slack, Sentry or an email. Edit it and watch the issue change.</label>
+    <textarea id="paste-input" class="paste-text" rows="6" spellcheck="false">@kofi checkout is 500ing for EU customers since the 14:20 deploy, see sentry PAY-3QK. urgent, customers are emailing</textarea>
+  </div>
+  <div class="paste-out">
+    <div class="app issue-card" data-ui aria-live="polite">
+      <div class="ic-top"><span class="id">PUN-231</span><span class="faint">New issue in Platform</span></div>
+      <p class="ic-title" id="out-title">Checkout is 500ing for EU customers</p>
+      <dl class="ic-fields">
+        <div><dt>Priority</dt><dd id="out-pri"><span class="pri pri-4"></span>Urgent</dd></div>
+        <div><dt>Label</dt><dd id="out-label"><span class="tag">bug</span></dd></div>
+        <div><dt>Assignee</dt><dd id="out-who"><span class="who">KO</span>Kofi</dd></div>
+        <div><dt>Cycle</dt><dd>Cycle 42, closes Fri</dd></div>
+        <div><dt>Linked</dt><dd id="out-link">Sentry PAY-3QK</dd></div>
+        <div><dt>Branch</dt><dd><code id="out-branch">kofi/pun-231-checkout-is-500ing-for-eu</code></dd></div>
+      </dl>
+      <div class="ic-actions"><span class="btn-ui">Create issue <kbd>⌘</kbd><kbd>↵</kbd></span><span class="faint">Esc to discard</span></div>
+    </div>
+  </div>
+  <h2 class="paste-h" id="paste-h"><span class="ph-a">Paste the mess,</span> <span class="ph-b">get an issue</span></h2>
+</section>
+
+<section class="flow" id="flow" aria-labelledby="flow-h">
+  <div class="field f1">
+    <h2 id="flow-h" data-r>From paste to punched</h2>
+    <div class="card app" data-ui data-r>
+      <div class="c-row"><span class="id">PUN-231</span><span class="pill">Triage</span></div>
+      <p class="c-title">Checkout is 500ing for EU customers</p>
+      <p class="c-sub">From Sentry PAY-3QK, 14:26</p>
+      <p class="c-sub">No owner yet</p>
+    </div>
+    <p class="clause" data-r>First it lands in Triage, wherever it came from.</p>
+  </div>
+  <div class="field f2">
+    <div class="card app" data-ui data-r>
+      <div class="c-row"><span class="id">PUN-231</span><span class="pill pill-on">Cycle 42</span></div>
+      <p class="c-title">Checkout is 500ing for EU customers</p>
+      <p class="c-sub"><span class="pri pri-4"></span>Urgent, due Thu</p>
+      <p class="c-sub"><span class="who">KO</span>Kofi took it at 14:31</p>
+    </div>
+    <p class="clause" data-r>Then someone takes it with one key.</p>
+  </div>
+  <div class="field f3">
+    <div class="card app" data-ui data-r>
+      <div class="c-row"><span class="id">PUN-231</span><span class="pill pill-on">In review</span></div>
+      <p class="c-title">Checkout is 500ing for EU customers</p>
+      <ul class="checks">
+        <li class="done">Reproduce with an EU card</li>
+        <li class="done">Fix VAT rounding</li>
+        <li>Add a test for EUR totals</li>
+        <li>Deploy to production</li>
+      </ul>
+      <p class="c-sub">PR #482 opened from kofi/pun-231</p>
+    </div>
+    <p class="clause" data-r>Then the branch reports in on its own.</p>
+  </div>
+  <div class="field f4">
+    <div class="card app" data-ui data-r>
+      <div class="c-row"><span class="id">PUN-231</span><span class="pill pill-done">Punched</span></div>
+      <p class="c-title struck">Checkout is 500ing for EU customers</p>
+      <p class="c-sub">Closed by PR #482, merged 11:02 Thu</p>
+      <p class="c-sub">Open for 20 h 36 min</p>
+    </div>
+    <p class="clause" data-r>Then the merge punches it off the list.</p>
+  </div>
+</section>
+
+<section class="crew wrap" id="crew" aria-labelledby="crew-h">
+  <div class="crew-text">
+    <h2 id="crew-h" data-r>Capped at fifteen, on purpose</h2>
+    <p data-r>Past fifteen people, a team needs triage meetings, permission screens and a tracker that behaves like a database. Below it, everyone can read the whole list on a Monday morning and know who has what.</p>
+    <p data-r>Punchlist is built for that size and stops there. No roles to configure, no workflow editor, no story points. Every decision in it assumes you know each other’s names.</p>
+    <figure class="crew-small" data-r>
+      <img src="assets/photograph-workman-framework-empire-state.webp" width="1024" height="814" alt="An ironworker in gloves bolting a steel beam high on the Empire State Building frame, with Manhattan and the Chrysler Building below">
+      <figcaption>Bolting the Empire State Building frame, 1930.</figcaption>
+    </figure>
+  </div>
+  <figure class="crew-big" data-r>
+    <div class="drift"><img src="assets/indian-construction-workers-at-boulder-dam-nevada.jpg" width="1920" height="1339" alt="Five construction workers in caps and rope harnesses leaning against a bulldozer blade on a rocky site"></div>
+    <figcaption>High scalers at Boulder Dam, Nevada, around 1935. A crew of five.</figcaption>
+  </figure>
+</section>
+
+<section class="features wrap" id="features" aria-labelledby="feat-h">
+  <h2 id="feat-h" data-r>What a small team uses daily</h2>
+  <div class="cells">
+
+    <article class="cell cell-top" data-r>
+      <div class="cell-text"><h3>Every action is a key</h3><p>Press ⌘K, type three letters, press Enter. Assigning, moving and closing never need the mouse.</p></div>
+      <div class="frag frag-bottom app" data-ui>
+        <div class="cmd-input">ass<span class="caret"></span></div>
+        <ul class="cmd-list">
+          <li class="is-sel"><span>Assign to…</span><kbd>A</kbd></li>
+          <li><span>Assign to me</span><kbd>I</kbd></li>
+          <li><span>Unassign</span><span class="faint">⇧A</span></li>
+          <li><span>Move to Cycle 43</span><span class="faint">⇧C</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="cell cell-bottom" data-r>
+      <div class="frag frag-top app" data-ui>
+        <div class="git-row"><span class="faint">Branch</span><code>kofi/pun-231-checkout-500-eu</code><span class="copied">Copied</span></div>
+        <div class="git-row"><span class="faint">PR #482</span><span>Fix VAT rounding for EU checkout</span></div>
+        <div class="git-row"><span class="faint">Checks</span><span><span class="ok">4 passed</span>, 0 failed</span></div>
+        <div class="git-row"><span class="faint">On merge</span><span>Punch PUN-231</span></div>
+      </div>
+      <div class="cell-text"><h3>Branches name themselves</h3><p>Copy the branch name with ⌘⇧. and push. The pull request links itself, and merging it punches the issue.</p></div>
+    </article>
+
+    <article class="cell cell-top" data-r>
+      <div class="cell-text"><h3>Weeks that end on Friday</h3><p>A cycle is one week. At 17:00 on Friday whatever is left rolls into the next one, and nobody holds a planning meeting about it.</p></div>
+      <div class="frag frag-bottom app" data-ui>
+        <div class="cy-head"><span>Cycle 42</span><span class="num faint">12 / 19</span></div>
+        <div class="cy-bar" role="img" aria-label="12 of 19 issues punched"><span style="width:63.2%"></span></div>
+        <table class="cy-days">
+          <thead><tr><th>Day</th><th class="num">Punched</th><th class="num">Added</th></tr></thead>
+          <tbody>
+            <tr><td>Mon</td><td class="num">3</td><td class="num">2</td></tr>
+            <tr><td>Tue</td><td class="num">4</td><td class="num">1</td></tr>
+            <tr><td>Wed</td><td class="num">5</td><td class="num">1</td></tr>
+            <tr class="is-sel"><td>Thu</td><td class="num">0</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="cell cell-bottom" data-r>
+      <div class="frag frag-top app" data-ui>
+        <div class="tri-head"><span>Triage</span><span class="num faint">3</span></div>
+        <ul class="tri-list">
+          <li class="is-sel"><span class="src">Sentry</span><span class="tt">TypeError in invoice PDF render</span><span class="acts"><span class="act">Accept</span></span></li>
+          <li><span class="src">GitHub</span><span class="tt">Docs: webhook signature example is wrong</span></li>
+          <li><span class="src">Email</span><span class="tt">Export to CSV drops the last column</span></li>
+        </ul>
+      </div>
+      <div class="cell-text"><h3>One inbox for what breaks</h3><p>Sentry errors, GitHub issues and forwarded emails land in Triage. Accept, merge with an existing issue, or decline with a note.</p></div>
+    </article>
+
+    <article class="cell cell-top" data-r>
+      <div class="cell-text"><h3>A handover sheet every Friday</h3><p>At 17:00 each person gets one email: what was punched, what rolled over, and who carried what.</p></div>
+      <div class="frag frag-bottom app" data-ui>
+        <p class="ho-sub">Platform, week 42</p>
+        <p class="ho-title">19 punched, 4 rolled over</p>
+        <table class="ho-table">
+          <tbody>
+            <tr><td>Priya</td><td class="num">5</td></tr>
+            <tr><td>Kofi</td><td class="num">4</td></tr>
+            <tr><td>Tomás</td><td class="num">4</td></tr>
+            <tr><td>Ines</td><td class="num">3</td></tr>
+            <tr><td>Mara, Devon</td><td class="num">3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="cell cell-bottom" data-r>
+      <div class="frag frag-top app" data-ui>
+        <div class="off-bar"><span class="dot-off"></span><span>Offline</span><span class="faint">3 changes waiting</span></div>
+        <ul class="off-list">
+          <li><span class="id">PUN-209</span><span>Priority set to High</span></li>
+          <li><span class="id">PUN-226</span><span>Assigned to Mara</span></li>
+          <li><span class="id">PUN-232</span><span>Created: Retry S3 uploads once</span></li>
+        </ul>
+      </div>
+      <div class="cell-text"><h3>Works on the train</h3><p>Your workspace lives on your machine, so lists open at once and edits made offline sync when you reconnect.</p></div>
+    </article>
+
+  </div>
+</section>
+
+<section class="pricing wrap" id="pricing" aria-labelledby="price-h">
+  <div class="price-text">
+    <h2 id="price-h" data-r>One price for the team</h2>
+    <p data-r>Nobody counts seats. Add the contractor, the designer and the intern: the bill stays the same until person sixteen, and Punchlist doesn’t go past fifteen anyway.</p>
+  </div>
+  <div class="price-figure">
+    <div class="fig-wrap">
+      <p class="figure" data-r aria-label="48 dollars per month"><span class="cur" aria-hidden="true">$</span><span aria-hidden="true">48</span><span class="per" aria-hidden="true">per month</span></p>
+      <div class="seats app" data-ui data-r>
+        <div class="seats-row"><span>Seats</span><span class="num">9 of 15</span></div>
+        <div class="seats-bar" role="img" aria-label="9 of 15 seats used"><span style="width:60%"></span></div>
+        <p class="faint">Billed the same at 2 or 15</p>
+      </div>
+    </div>
+    <ul class="included" data-r>
+      <li>Up to 15 people, no per-seat billing</li>
+      <li>Unlimited issues, projects and history</li>
+      <li>GitHub, GitLab and Sentry built in</li>
+      <li>30 days free, no card needed</li>
+    </ul>
+    <a class="btn" href="#start" data-r>Start a 30-day trial</a>
+  </div>
+</section>
+
+<section class="faq wrap" id="faq" aria-label="Questions">
+  <div class="faq-list" data-r>
+    <h2 class="faq-h">Common questions</h2>
+    <ul id="faq-q">
+      <li><button type="button" class="q is-on" aria-expanded="true" aria-controls="a1" id="q1">What happens when we hire person sixteen?</button><div class="a-inline" id="a1" role="region" aria-labelledby="q1"><p>We tell you a month ahead. You can keep everything read-only, export it all as JSON, or stay at fifteen. We would rather you moved to a tool built for bigger teams than squeeze you.</p></div></li>
+      <li><button type="button" class="q" aria-expanded="false" aria-controls="a2" id="q2">Can we bring our issues from Jira, Linear or GitHub?</button><div class="a-inline" id="a2" role="region" aria-labelledby="q2" hidden><p>Yes. The importer reads Jira CSV, Linear exports and GitHub Issues directly, keeps old IDs as aliases, and takes about a minute per thousand issues.</p></div></li>
+      <li><button type="button" class="q" aria-expanded="false" aria-controls="a3" id="q3">Is there a free plan?</button><div class="a-inline" id="a3" role="region" aria-labelledby="q3" hidden><p>No free tier. Every team gets 30 days with everything switched on and no card. Open-source projects use Punchlist free for as long as they like.</p></div></li>
+      <li><button type="button" class="q" aria-expanded="false" aria-controls="a4" id="q4">Does it really work offline?</button><div class="a-inline" id="a4" role="region" aria-labelledby="q4" hidden><p>Yes. The workspace is stored on your machine and syncs when you reconnect. Edits to the same issue from two laptops merge field by field.</p></div></li>
+      <li><button type="button" class="q" aria-expanded="false" aria-controls="a5" id="q5">Where is our data stored?</button><div class="a-inline" id="a5" role="region" aria-labelledby="q5" hidden><p>In Frankfurt or in Virginia, chosen when you sign up. Backups run daily, and settings has a full export you can download at any time.</p></div></li>
+      <li><button type="button" class="q" aria-expanded="false" aria-controls="a6" id="q6">Is there an API?</button><div class="a-inline" id="a6" role="region" aria-labelledby="q6" hidden><p>A REST API, a webhook for every change, and the same command line tool we use ourselves to punch issues from a terminal.</p></div></li>
+      <li><button type="button" class="q" aria-expanded="false" aria-controls="a7" id="q7">Why no story points?</button><div class="a-inline" id="a7" role="region" aria-labelledby="q7" hidden><p>Issues are small, medium or large. A team of six spends estimation time better on the work, and the Friday sheet already shows what got done.</p></div></li>
+    </ul>
+  </div>
+  <div class="faq-pane" aria-hidden="true">
+    <p class="answer" id="answer">We tell you a month ahead. You can keep everything read-only, export it all as JSON, or stay at fifteen. We would rather you moved to a tool built for bigger teams than squeeze you.</p>
+  </div>
+</section>
+
+<section class="cta" id="start" aria-labelledby="cta-h">
+  <div class="tile tile-side tile-video">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/construction-site-of-xuanmen-bay-bridge-poster.jpg" width="854" height="480" aria-hidden="true"><source src="assets/construction-site-of-xuanmen-bay-bridge.webm" type="video/webm"></video>
+  </div>
+  <div class="tile tile-main">
+    <div class="cta-text">
+      <h2 id="cta-h" data-r>Clear your first list this week</h2>
+      <p data-r>Start a 30-day trial for the whole team. We send the sign-in link to this address, and you can invite everyone from there.</p>
+      <form class="signup" id="signup" action="mailto:hello@punchlist.app" method="post" enctype="text/plain" data-r>
+        <label class="sr" for="email">Work email</label>
+        <input id="email" name="email" type="email" required placeholder="you@yourteam.dev" autocomplete="email">
+        <button class="btn btn-dark" type="submit">Start a 30-day trial</button>
+      </form>
+    </div>
+    <div class="invite app" data-ui data-r>
+      <div class="inv-head"><span>Invite to Platform</span><span class="num faint">4 of 15 seats</span></div>
+      <ul class="inv-list">
+        <li><span class="who">PR</span><span>priya@yourteam.dev</span><span class="faint">Joined</span></li>
+        <li><span class="who">KO</span><span>kofi@yourteam.dev</span><span class="faint">Joined</span></li>
+        <li><span class="who">MS</span><span>mara@yourteam.dev</span><span class="faint">Invited</span></li>
+        <li class="is-sel"><span class="who">+</span><span class="faint">Add another email</span><span></span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="tile tile-side tile-flat"></div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p class="credits">Pictures: “Indian construction workers at Boulder Dam, Nevada. High scalers.”, public domain, U.S. National Archives via <a href="https://commons.wikimedia.org/wiki/File:Indian_construction_workers_at_Boulder_Dam,_Nevada_-_NARA_-_298638.jpg">Wikimedia Commons</a>. “Photograph Workman Framework Empire State”, U.S. National Archives, CC0, via <a href="https://www.rawpixel.com/image/8765735/photo-image-vintage-smoke-public-domain">rawpixel</a>. “Construction site of Xuanmen Bay Bridge” by Rowingbohe, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Construction_site_of_Xuanmen_Bay_Bridge.webm">Wikimedia Commons</a>, shown in greyscale.</p>
+  <div class="foot-line">
+    <span class="muted">Issue tracking for small teams</span>
+    <span class="foot-links"><a class="link" href="#paste">Product</a><a class="link" href="#pricing">Pricing</a><a class="link" href="#faq">FAQ</a><a class="link" href="mailto:hello@punchlist.app">Contact</a></span>
+    <span class="muted foot-end">2026, <a class="link" href="#privacy">Privacy</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
+

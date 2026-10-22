@@ -1,0 +1,5 @@
+# CodexClaw wrote this when it created .codexclaw; everything here is local runtime state.
+*
+!.gitignore
+!rules/
+!rules/*.md

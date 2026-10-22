@@ -83,6 +83,10 @@ git clone https://github.com/lidge-jun/noslopdesign && cd noslopdesign
 
 ## 작업 순서
 
+같은 프롬프트 네 개를 스킬 없음, taste-skill, noslopdesign으로 같은 모델과 머신에서 돌린 결과:
+[lidge-jun.github.io/noslopdesign/compare](https://lidge-jun.github.io/noslopdesign/compare/).
+
+
 1. 문구 수정부터 새 브랜드 화면까지 작업 크기를 정하고 그만큼만 공을 들입니다.
 2. 화면 종류(랜딩, 앱, 대시보드, AI 도구), 언어권, 밀도, 에셋과 모션 필요도를 분류합니다.
 3. 요청이 모호하거나 브랜드가 드러나는 화면이면 코드 전에 Design Read로 방향 하나를 확정합니다.

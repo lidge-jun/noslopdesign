@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마감노트 · 식당과 카페의 일일 마감을 영수증 한 장으로</title>
+<meta name="description" content="카드 단말기, 현금, 배달앱 정산을 매일 밤 자동으로 맞춰 한 장의 마감 영수증으로 보내 드립니다.">
+<script>
+document.documentElement.classList.add('js');
+(function () { var v = new URLSearchParams(location.search).get('vh'); if (v && +v > 0) document.documentElement.style.setProperty('--svh', (+v / 100) + 'px'); })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="read">
+    <section class="sheet" aria-labelledby="title" data-focus="all">
+      <nav class="topline" aria-label="주요 메뉴" data-rise style="--i:0">
+        <a href="#pricing">요금</a>
+        <a class="wordmark" href="#top" id="top">마감노트</a>
+        <a href="#try">직접 해 보기</a>
+      </nav>
+      <div class="sheet-body">
+        <h1 id="title" data-rise style="--i:1">오늘 마감,<br>영수증 한 장으로</h1>
+        <p class="sheet-lead" data-rise style="--i:2">마감노트는 카드 단말기, 현금, 배달앱 정산을 매일 밤 10시에 자동으로 맞춰 한 장의 마감 영수증으로 보내 드리는 식당<span class="md">·</span>카페용 서비스입니다.</p>
+        <p data-rise style="--i:3"><a class="button" href="#start">30일 무료로 써 보기</a></p>
+        <p class="sheet-note" data-rise style="--i:4">한 매장 월 19,000원 <span class="md">·</span> 카드 등록 없이 시작</p>
+      </div>
+    </section>
+
+    <section class="intro" aria-labelledby="intro-h" data-focus="diff">
+      <h2 id="intro-h" data-reveal>문 닫은 뒤의 계산</h2>
+      <p class="first" data-reveal style="--d:1">가게 문을 닫고 나면 계산이 하나 더 남습니다. 카드 단말기 내역과 서랍 속 현금, 배달앱 주문을 포스 기록과 한 줄씩 맞추는 일입니다.</p>
+      <p data-reveal style="--d:2">배달앱은 중개 수수료, 결제 수수료, 배달비를 저마다 다르게 떼고 며칠 뒤에 입금합니다. 카드사는 영업일에 맞춰 나눠 넣습니다. 그래서 오늘 번 돈과 통장에 들어올 돈은 하루도 같지 않습니다.</p>
+      <p data-reveal style="--d:3">마감노트는 이 대조를 매일 밤 대신 합니다. 맞지 않는 줄만 골라 알려 드리고, 나머지는 영수증 한 장으로 정리해 카카오톡으로 보냅니다.</p>
+      <p data-reveal style="--d:4">옆의 영수증이 그 한 장입니다. 망원동의 작은 빵집 하루를 예로 들었습니다. <a href="#try">내 가게 숫자로 해 보기</a></p>
+    </section>
+
+    <section class="features" id="features" aria-labelledby="features-h">
+      <h2 id="features-h" data-reveal>영수증에 담기는 네 가지</h2>
+
+      <article class="module" data-focus="diff">
+        <div class="panel" data-ui data-reveal>
+          <div class="ui-alert">
+            <p class="ui-alert-title"><span class="ui-dot" aria-hidden="true"></span>현금 시재 −12,000원</p>
+            <p>20:41 카드 승인 취소 1건이 포스에 그대로 남아 있습니다.</p>
+            <p class="ui-actions"><span class="ui-btn">포스에서 지우기</span><span class="ui-btn ghost">확인했어요</span></p>
+          </div>
+        </div>
+        <div class="module-text">
+          <h3 data-reveal style="--d:1">차액은 이유와 함께</h3>
+          <p data-reveal style="--d:2">포스 합계와 실제로 받은 돈이 다르면 그 줄만 따로 표시합니다.</p>
+          <p data-reveal style="--d:3">취소 승인, 지우지 않은 테스트 주문, 쿠폰 부담분처럼 원인이 될 만한 기록을 시간과 함께 붙여 드립니다.</p>
+        </div>
+      </article>
+
+      <article class="module" data-focus="fee">
+        <div class="panel" data-ui data-reveal>
+          <table class="ui-table">
+            <caption>배달의민족 <span class="md">·</span> 10월 21일</caption>
+            <tbody>
+              <tr><th scope="row">주문 금액</th><td>486,000</td></tr>
+              <tr><th scope="row">중개 수수료</th><td>−32,805</td></tr>
+              <tr><th scope="row">결제 수수료</th><td>−14,580</td></tr>
+              <tr><th scope="row">배달비</th><td>−26,025</td></tr>
+              <tr class="sum"><th scope="row">정산 예정</th><td>412,590</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="module-text">
+          <h3 data-reveal style="--d:1">배달앱 수수료를 항목별로</h3>
+          <p data-reveal style="--d:2">앱마다 다른 정산서를 같은 순서로 다시 적습니다. 주문 금액에서 무엇이 얼마나 빠졌는지 한눈에 보입니다.</p>
+          <p data-reveal style="--d:3">배달의민족, 쿠팡이츠, 요기요 세 곳을 연결할 수 있습니다.</p>
+        </div>
+      </article>
+
+      <article class="module" data-focus="deposit">
+        <div class="panel" data-ui data-reveal>
+          <ol class="ui-days">
+            <li><span class="d">10/22 수</span><span class="w">카드</span><span class="v">1,262,300</span></li>
+            <li><span class="d">10/24 금</span><span class="w">배달의민족</span><span class="v">412,590</span></li>
+            <li><span class="d">10/27 월</span><span class="w">쿠팡이츠</span><span class="v">164,750</span></li>
+          </ol>
+        </div>
+        <div class="module-text">
+          <h3 data-reveal style="--d:1">언제 얼마가 들어오는지</h3>
+          <p data-reveal style="--d:2">오늘 매출이 어느 날 통장에 얼마씩 들어올지 날짜별로 적어 둡니다.</p>
+          <p data-reveal style="--d:3">다음 날 아침 9시에 실제 입금과 한 번 더 맞춰 보고, 빠진 돈이 있으면 알려 드립니다.</p>
+        </div>
+      </article>
+
+      <article class="module" data-focus="tax">
+        <div class="panel" data-ui data-reveal>
+          <div class="ui-file">
+            <p class="ui-file-name">2026년 10월 매출 정리.xlsx</p>
+            <p class="ui-file-meta">부가세 신고용 <span class="md">·</span> 31일치 <span class="md">·</span> 시트 4개</p>
+            <p class="ui-actions"><span class="ui-btn">세무사에게 보내기</span></p>
+          </div>
+        </div>
+        <div class="module-text">
+          <h3 data-reveal style="--d:1">월말에는 파일 하나</h3>
+          <p data-reveal style="--d:2">매달 1일, 지난달 마감을 결제 수단별<span class="md">·</span>날짜별로 정리한 엑셀 파일을 만들어 둡니다.</p>
+          <p data-reveal style="--d:3">등록해 둔 세무사 이메일로 보낼지 카카오톡으로 한 번만 묻습니다.</p>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <aside class="pin" aria-label="마감 영수증 예시">
+    <div class="pin-field">
+      <div class="receipt-wrap">
+        <div class="receipt" data-ui data-focus="all" id="receipt">
+          <p class="r-shop" data-rise style="--i:2">소금빵 작업실 <span class="md">·</span> 망원점</p>
+          <p class="r-meta" data-rise style="--i:3">2026. 10. 21. (화) &nbsp;마감 22:00</p>
+
+          <p class="r-group" data-rise style="--i:4">매출</p>
+          <p class="r-row" data-k="sales" data-rise style="--i:5"><span>카드 38건</span><span>1,284,500</span></p>
+          <p class="r-row" data-k="sales" data-rise style="--i:6"><span>현금 9건</span><span>212,000</span></p>
+          <p class="r-row" data-k="sales fee" data-rise style="--i:7"><span>배달의민족 21건</span><span>486,000</span></p>
+          <p class="r-row" data-k="sales" data-rise style="--i:8"><span>쿠팡이츠 8건</span><span>198,500</span></p>
+          <p class="r-row r-sum" data-k="sales diff" data-rise style="--i:9"><span>합계</span><span>2,181,000</span></p>
+
+          <p class="r-group" data-rise style="--i:10">대조</p>
+          <p class="r-row" data-k="diff" data-rise style="--i:11"><span>포스 기록</span><span>2,193,000</span></p>
+          <p class="r-row r-flag" data-k="diff" data-rise style="--i:12"><span>차액 <span class="md">·</span> 확인 필요</span><span>−12,000</span></p>
+
+          <p class="r-group" data-rise style="--i:13">수수료</p>
+          <p class="r-row" data-k="fee" data-rise style="--i:14"><span>카드</span><span>−22,200</span></p>
+          <p class="r-row" data-k="fee" data-rise style="--i:15"><span>배달의민족</span><span>−73,410</span></p>
+          <p class="r-row" data-k="fee" data-rise style="--i:16"><span>쿠팡이츠</span><span>−33,750</span></p>
+
+          <p class="r-group" data-rise style="--i:17">입금 예정</p>
+          <p class="r-row" data-k="deposit" data-rise style="--i:18"><span>10/22 카드</span><span>1,262,300</span></p>
+          <p class="r-row" data-k="deposit" data-rise style="--i:19"><span>10/24 배달의민족</span><span>412,590</span></p>
+          <p class="r-row" data-k="deposit" data-rise style="--i:20"><span>10/27 쿠팡이츠</span><span>164,750</span></p>
+          <p class="r-row r-sum" data-k="deposit fee" data-rise style="--i:21"><span>손에 남는 돈</span><span>2,051,640</span></p>
+
+          <p class="r-row r-month" data-k="tax" data-rise style="--i:22"><span>10월 누적 21일</span><span>41,860,500</span></p>
+          <p class="r-foot" data-rise style="--i:23">22:10 카카오톡 발송 완료</p>
+        </div>
+      </div>
+    </div>
+    <p class="pin-bar"><span>매일 밤 10:00 자동 마감</span><span id="pin-caption">망원동 빵집의 10월 21일</span></p>
+  </aside>
+</div>
+
+<section class="try" id="try" aria-labelledby="try-h">
+  <div class="try-in">
+    <label for="note" class="try-label">오늘 매출을 메모하듯 적어 보세요. 한 줄에 하나씩.</label>
+    <textarea id="note" spellcheck="false" rows="6">카드 1,284,500
+현금 212,000
+배민 486,000
+쿠팡 198,500
+포스 2,193,000</textarea>
+  </div>
+  <div class="try-out">
+    <div class="closing" data-ui id="closing" aria-live="polite">
+      <p class="c-title">오늘의 마감</p>
+      <div class="c-rows" id="c-rows">
+        <p class="c-row"><span class="c-name">카드</span><span class="c-bar"><i style="width:58.9%"></i></span><span class="c-val">1,284,500</span></p>
+        <p class="c-row"><span class="c-name">현금</span><span class="c-bar"><i style="width:9.7%"></i></span><span class="c-val">212,000</span></p>
+        <p class="c-row"><span class="c-name">배달의민족</span><span class="c-bar"><i style="width:22.3%"></i></span><span class="c-val">486,000</span></p>
+        <p class="c-row"><span class="c-name">쿠팡이츠</span><span class="c-bar"><i style="width:9.1%"></i></span><span class="c-val">198,500</span></p>
+      </div>
+      <dl class="c-sum">
+        <div><dt>매출 합계</dt><dd id="c-total">2,181,000</dd></div>
+        <div><dt>수수료 예상</dt><dd id="c-fee">−129,360</dd></div>
+        <div><dt>손에 남는 돈</dt><dd id="c-net">2,051,640</dd></div>
+        <div><dt>포스와 차액</dt><dd id="c-diff">−12,000</dd></div>
+      </dl>
+      <p class="c-verdict warn" id="c-verdict">포스 기록보다 12,000원 적습니다. 취소된 카드 승인이나 서랍 속 현금부터 확인해 보세요.</p>
+      <p class="c-note">수수료는 예시 요율로 계산했습니다. 실제 서비스는 각 정산서의 금액을 그대로 씁니다.</p>
+    </div>
+  </div>
+  <h2 class="try-h" id="try-h"><span>적어 두면</span><span>맞춰 드립니다</span></h2>
+</section>
+
+<section class="night" id="night" aria-labelledby="night-h">
+  <figure class="night-photo">
+    <div class="photo-crop"><img src="assets/night-view-of-euljiro-1-ga-intersection.jpg" width="1600" height="1067" alt="해 질 무렵 불이 켜진 서울 을지로 1가 교차로와 빌딩들" loading="eager" decoding="async" data-drift></div>
+    <figcaption>서울 을지로 1가, 저녁</figcaption>
+  </figure>
+  <div class="night-grid">
+    <div class="night-text">
+      <h2 id="night-h" data-reveal>마감이 도는 밤</h2>
+      <p data-reveal style="--d:1">문을 닫는 시간에 맞춰 마감노트가 일을 시작합니다. 사장님이 하실 일은 현금 금액 한 번 답하는 것뿐입니다.</p>
+    </div>
+    <div class="slip" data-reveal style="--d:2">
+      <p class="slip-head">밤 10시 00분</p>
+      <p class="slip-row"><span>카드 승인 내역 불러오기</span><i aria-hidden="true"></i><span>1분</span></p>
+      <p class="slip-row"><span>배달앱 정산 내역 불러오기</span><i aria-hidden="true"></i><span>2분</span></p>
+      <p class="slip-head">밤 10시 03분</p>
+      <p class="slip-row"><span>포스 기록과 한 줄씩 대조</span><i aria-hidden="true"></i><span>4분</span></p>
+      <p class="slip-row"><span>카카오톡으로 현금 금액 묻기</span><i aria-hidden="true"></i><span>사장님 1분</span></p>
+      <p class="slip-head">밤 10시 10분</p>
+      <p class="slip-row"><span>차액 원인 찾아 붙이기</span><i aria-hidden="true"></i><span>2분</span></p>
+      <p class="slip-row"><span>마감 영수증 보내기</span><i aria-hidden="true"></i><span>바로</span></p>
+      <p class="slip-head">다음 날 아침 9시</p>
+      <p class="slip-row"><span>입금 예정과 실제 입금 맞추기</span><i aria-hidden="true"></i><span>1분</span></p>
+      <p class="slip-end"><span>마감 영수증 한 장</span><span>사장님 손 1분</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing" aria-label="요금">
+  <div class="plan plan-main">
+    <h2 data-reveal>한 매장</h2>
+    <p class="plan-for" data-reveal style="--d:1">가게 하나를 혼자 꾸리는 사장님께.</p>
+    <p class="plan-what" data-reveal style="--d:2">카드 단말기 한 대와 배달앱 세 곳까지 연결하고, 매일 밤 마감 영수증, 입금 예정 달력, 월말 세무 자료를 받습니다. 첫 30일은 무료이고 카드 등록 없이 시작합니다.</p>
+    <div class="plan-foot">
+      <p class="price" data-reveal style="--d:3">19,000원<span>/ 월</span></p>
+      <a class="button" href="#start">30일 무료로 시작</a>
+    </div>
+  </div>
+  <div class="plan plan-more">
+    <h2 data-reveal>여러 매장</h2>
+    <p class="plan-for" data-reveal style="--d:1">점포가 둘 이상인 사장님께.</p>
+    <p class="plan-what" data-reveal style="--d:2">매장마다 따로 마감하고, 한 화면에서 모든 매장의 차액과 입금을 함께 봅니다. 점장 계정은 마감과 현금 입력만 할 수 있습니다.</p>
+    <div class="plan-foot">
+      <p class="price" data-reveal style="--d:3">15,000원<span>/ 매장당 월</span></p>
+      <a class="button" href="mailto:hello@magamnote.kr?subject=%EC%97%AC%EB%9F%AC%20%EB%A7%A4%EC%9E%A5%20%EC%83%81%EB%8B%B4&amp;body=%EB%A7%A4%EC%9E%A5%20%EC%88%98%3A%20%0A%EC%93%B0%EB%8A%94%20%ED%8F%AC%EC%8A%A4%3A%20">상담 요청</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h" data-reveal>자주 묻는 질문</h2>
+  <div class="faq-text">
+    <p data-reveal><b>포스기를 바꿔야 하나요?</b> 아닙니다. 지금 쓰는 포스의 일 매출 기록을 읽어 옵니다. 연결할 수 없는 포스라면 마감 화면을 사진으로 찍어 보내셔도 됩니다.</p>
+    <p data-reveal><b>배달앱 비밀번호를 알려 줘야 하나요?</b> 정산 내역을 조회하는 권한만 연결합니다. 주문 접수나 메뉴 수정 권한은 받지 않습니다.</p>
+    <p data-reveal><b>현금은 어떻게 맞추나요?</b> 마감 시간에 카카오톡으로 서랍 속 현금이 얼마인지 묻습니다. 숫자 하나만 답하시면 됩니다.</p>
+    <p data-reveal><b>마감 시간을 바꿀 수 있나요?</b> 밤 9시부터 새벽 3시까지 10분 단위로 고를 수 있고, 요일마다 다르게 둘 수도 있습니다.</p>
+    <p data-reveal><b>차액이 나오면 어떻게 하나요?</b> 영수증에 원인이 될 만한 기록을 시간과 함께 적어 드립니다. 확인했다고 누르면 다음 날 영수증에서 빠집니다.</p>
+    <p data-reveal><b>세무사에게는 어떻게 보내나요?</b> 매달 1일에 지난달 정리 파일을 만들고, 등록한 세무사 이메일로 보낼지 한 번 묻습니다.</p>
+    <p data-reveal><b>직원도 볼 수 있나요?</b> 점장 계정을 따로 만들 수 있습니다. 점장은 마감과 현금 입력만 하고 입금 정보는 보지 못합니다.</p>
+    <p data-reveal><b>무료 기간이 끝나면 자동으로 결제되나요?</b> 아닙니다. 카드 등록 없이 시작하므로 30일 뒤 결제 수단을 직접 넣으셔야 이어집니다.</p>
+    <p data-reveal><b>해지하면 기록은 어떻게 되나요?</b> 해지한 뒤 90일 동안 모든 마감 기록을 엑셀로 내려받을 수 있습니다.</p>
+    <p data-reveal><b>종이 영수증으로도 받을 수 있나요?</b> 매장 영수증 프린터가 인터넷에 연결되어 있다면 마감 영수증을 그 자리에서 그대로 인쇄합니다.</p>
+  </div>
+</section>
+
+<section class="cta" id="start" aria-labelledby="cta-h">
+  <div class="cta-text">
+  <h2 id="cta-h" data-reveal>오늘 밤 마감부터 마감노트에 맡겨 보세요.</h2>
+  <p data-reveal style="--d:1">가게 이름과 쓰는 포스만 알려 주시면 내일 아침에 첫 영수증을 보여 드립니다.</p>
+  <p class="cta-actions" data-reveal style="--d:2"><a class="button" href="mailto:hello@magamnote.kr?subject=%EB%A7%88%EA%B0%90%EB%85%B8%ED%8A%B8%2030%EC%9D%BC%20%EB%AC%B4%EB%A3%8C%20%EC%8B%9C%EC%9E%91&amp;body=%EA%B0%80%EA%B2%8C%20%EC%9D%B4%EB%A6%84%3A%20%0A%EC%93%B0%EB%8A%94%20%ED%8F%AC%EC%8A%A4%3A%20%0A%EC%97%B0%EA%B2%B0%ED%95%A0%20%EB%B0%B0%EB%8B%AC%EC%95%B1%3A%20">30일 무료로 시작</a><a class="textlink" href="#try">먼저 숫자로 해 보기</a></p>
+  </div>
+  <div class="msg" data-ui data-reveal style="--d:3" aria-label="카카오톡으로 받는 마감 알림 예시">
+    <p class="msg-from"><span class="msg-mark" aria-hidden="true">마</span>마감노트 <span class="msg-time">오후 10:10</span></p>
+    <div class="msg-body">
+      <p class="msg-title">10월 21일 마감이 끝났습니다</p>
+      <p class="msg-line"><span>매출 합계</span><span>2,181,000원</span></p>
+      <p class="msg-line"><span>손에 남는 돈</span><span>2,051,640원</span></p>
+      <p class="msg-line warn"><span>확인할 차액</span><span>1건 −12,000원</span></p>
+      <p class="msg-btn">마감 영수증 보기</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-photo"><img src="assets/gwangjang-market-seoul-02.jpg" width="1920" height="1074" alt="간판이 빼곡한 서울 광장시장 먹자골목과 오가는 사람들" loading="lazy" decoding="async" data-drift></div>
+  <div class="foot-menu">
+    <p class="foot-mark">마감노트</p>
+    <nav aria-label="바닥 메뉴">
+      <ul class="menu">
+        <li><a href="#features">기능</a></li>
+        <li><a href="#try">직접 해 보기</a></li>
+        <li><a href="#night">마감 순서</a></li>
+        <li><a href="#pricing">요금</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ul>
+    </nav>
+    <div class="foot-blocks">
+      <p>문의<br><a href="mailto:hello@magamnote.kr">hello@magamnote.kr</a><br>평일 오전 10시부터 오후 6시까지</p>
+      <p>소식<br><a href="#">카카오톡 채널 마감노트</a><br><a href="#">인스타그램</a></p>
+    </div>
+    <p class="legal">© 2026 마감노트 <span class="md">·</span> <a href="#">이용약관</a> <span class="md">·</span> <a href="#">개인정보처리방침</a><br>사진: 광장시장 “Gwangjang Market, Seoul 02”, Bgag, CC0 <span class="md">·</span> 을지로 “Night view of Euljiro 1-ga intersection and the Sogong-dong Lotte town”, 서울연구원, CC BY 4.0 <span class="md">·</span> 모두 Wikimedia Commons</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
+

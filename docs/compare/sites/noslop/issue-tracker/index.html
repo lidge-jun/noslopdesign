@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cairn: issue tracking for small engineering teams</title>
+<meta name="description" content="Cairn is a fast, keyboard-driven issue tracker for engineering teams of 3 to 25 people. Triage on Monday, ship on Friday, close issues from your commits.">
+<meta property="og:title" content="Cairn: issue tracking for small engineering teams">
+<meta property="og:description" content="One fast list for bugs, chores and the next release. Free for up to 10 people.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f1f2f4">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/ibm-plex-sans-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top" aria-label="Cairn home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="11" y="6" width="10" height="5" rx="2.5" fill="var(--accent)"/><rect x="8" y="13" width="16" height="5" rx="2.5"/><rect x="5" y="20" width="22" height="6" rx="3"/></svg><span>Cairn</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#demo">Product</a></li>
+        <li><a href="#week">Workflow</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary btn--sm nav__cta" href="#start" data-nav-cta>Start a workspace</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <h1 id="hero-title" class="hero__title">Issue tracking for teams that fit around one lunch table.</h1>
+      <div class="hero__row">
+        <p class="hero__lede">Cairn gives engineering teams of 3 to 25 people one fast list for bugs, chores and the next release. Triage on Monday, ship on Friday, and spend the time in between writing code.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#start">Start a workspace</a>
+          <p class="hero__note">Free for up to 10 people. No card needed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap demo-wrap" id="demo">
+      <p class="demo-hint"><span class="only-hover">This list works. Click into it, then press <kbd>J</kbd> <kbd>K</kbd> to move, <kbd>S</kbd> to change status, <kbd>P</kbd> for priority, <kbd>C</kbd> to add an issue.</span><span class="only-touch">This list works. Tap a status icon to move an issue along, or add one with New issue.</span></p>
+      <div class="app" data-demo tabindex="0" role="application" aria-label="Interactive Cairn issue list" aria-describedby="demo-keys">
+        <p id="demo-keys" class="sr-only">Use J and K or the arrow keys to select an issue. S changes status, P changes priority, C creates an issue, Escape cancels.</p>
+        <aside class="app__side" aria-label="Workspace">
+          <div class="app__ws"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="11" y="6" width="10" height="5" rx="2.5" fill="var(--accent)"/><rect x="8" y="13" width="16" height="5" rx="2.5"/><rect x="5" y="20" width="22" height="6" rx="3"/></svg><span>Northwind Rail</span></div>
+          <ul class="app__nav">
+            <li><span>Inbox</span><span class="count">3</span></li>
+            <li><span>My issues</span></li>
+            <li class="is-active"><span>Platform</span></li>
+            <li><span>Mobile</span></li>
+            <li><span>Billing</span></li>
+          </ul>
+          <p class="app__cycle"><span class="mono">Cycle 31</span><span data-cycle-progress>2 of 9 closed</span><span>Ends Friday</span></p>
+        </aside>
+        <div class="app__main">
+          <div class="app__bar">
+            <div class="tabs" role="tablist" aria-label="Filter issues">
+              <button role="tab" aria-selected="true" data-filter="all">All</button>
+              <button role="tab" aria-selected="false" data-filter="active">Active</button>
+              <button role="tab" aria-selected="false" data-filter="backlog">Backlog</button>
+            </div>
+            <button class="app__new" type="button" data-new>New issue <kbd>C</kbd></button>
+          </div>
+          <form class="app__create" data-create hidden novalidate>
+            <label class="sr-only" for="new-title">Issue title</label>
+            <input id="new-title" name="title" autocomplete="off" placeholder="What needs doing?" maxlength="90">
+            <span class="app__create-help">Enter to add, Esc to cancel</span>
+            <p class="app__error" data-create-error role="alert" hidden>Give the issue a title first.</p>
+          </form>
+          <div class="app__list" data-list></div>
+          <noscript><p class="app__empty">Turn on JavaScript to try the live issue list.</p></noscript>
+        </div>
+        <p class="sr-only" aria-live="polite" data-live></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="week" id="week" aria-labelledby="week-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="week-title">A week with Cairn takes three short rituals.</h2>
+        <p>No sprint planning poker, no status meeting. The tool keeps the state, so the team only meets when something is actually stuck.</p>
+      </div>
+      <ol class="week__rows">
+        <li class="week__row" data-reveal>
+          <p class="week__day mono">Monday</p>
+          <div class="week__copy">
+            <h3>Triage the inbox in ten minutes</h3>
+            <p>New bugs from Sentry, support and teammates land in one inbox. Each one gets a single keystroke: accept it into the cycle, park it in the backlog, or close it with a reason the reporter can read.</p>
+          </div>
+          <div class="week__art keys" aria-label="Triage shortcuts">
+            <p><kbd>1</kbd> Accept into Cycle 31</p>
+            <p><kbd>2</kbd> Move to backlog</p>
+            <p><kbd>3</kbd> Close as duplicate</p>
+            <p><kbd>4</kbd> Close as won't fix</p>
+          </div>
+        </li>
+        <li class="week__row" data-reveal>
+          <p class="week__day mono">Wednesday</p>
+          <div class="week__copy">
+            <h3>See what's stuck without asking</h3>
+            <p>The cycle view plots open issues against the days left. Anything nobody has touched in three working days gets flagged in the list, so the standup is about that one issue instead of everyone's.</p>
+          </div>
+          <figure class="week__art chart">
+            <svg viewBox="0 0 320 168" role="img" aria-labelledby="burn-title burn-desc">
+              <title id="burn-title">Cycle 31 open issues</title>
+              <desc id="burn-desc">Open issues fall from 14 on Monday to 6 on Wednesday, close to the planned line. One issue, CRN-207, is flagged as stuck since Monday.</desc>
+              <g class="chart__grid">
+                <line x1="32" y1="20" x2="308" y2="20"/><line x1="32" y1="66" x2="308" y2="66"/><line x1="32" y1="112" x2="308" y2="112"/><line x1="32" y1="140" x2="308" y2="140"/>
+              </g>
+              <g class="chart__axis">
+                <text x="24" y="24" text-anchor="end">14</text><text x="24" y="70" text-anchor="end">8</text><text x="24" y="144" text-anchor="end">0</text>
+                <text x="40" y="160">Mon</text><text x="104" y="160">Tue</text><text x="168" y="160">Wed</text><text x="232" y="160">Thu</text><text x="290" y="160">Fri</text>
+              </g>
+              <path class="chart__plan" d="M44 20 L300 140"/>
+              <path class="chart__actual" d="M44 20 L108 46 L140 52 L172 94"/>
+              <circle class="chart__now" cx="172" cy="94" r="4"/>
+              <circle class="chart__stuck" cx="76" cy="20" r="5"/>
+              <text class="chart__label" x="86" y="14">CRN-207 untouched since Mon</text>
+            </svg>
+          </figure>
+        </li>
+        <li class="week__row" data-reveal>
+          <p class="week__day mono">Friday</p>
+          <div class="week__copy">
+            <h3>Post the changelog you already wrote</h3>
+            <p>Issues closed this cycle roll up into a draft release note, grouped by project. Edit the wording, then post it to a Slack channel or copy it as Markdown into your docs.</p>
+          </div>
+          <div class="week__art notes">
+            <p class="notes__title">Platform, week of Oct 19</p>
+            <ul>
+              <li>Webhook retries no longer double-charge when Stripe times out <span class="mono">CRN-214</span></li>
+              <li>Password reset emails are rate limited per account <span class="mono">CRN-196</span></li>
+              <li>Staging runs Postgres 16 <span class="mono">CRN-198</span></li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="git" aria-labelledby="git-title">
+    <div class="wrap git__grid">
+      <div class="git__copy">
+        <h2 id="git-title">Close issues from the commit you were writing anyway.</h2>
+        <p>Connect GitHub or GitLab once. Mention an issue ID in a branch name and Cairn moves it to In progress. Write <span class="mono">Fixes CRN-214</span> in a commit and the issue closes when the pull request merges into main.</p>
+        <p>Nobody has to remember to drag a card on Friday afternoon.</p>
+      </div>
+      <div class="git__flow" data-git>
+        <pre class="term" aria-label="Example commit"><span class="term__prompt">$</span> git commit -m "Retry webhooks with idempotency keys" \
+    -m "Fixes CRN-214"
+<span class="term__dim">[mk/crn-214 8e1c4d2] Retry webhooks with idempotency keys</span>
+<span class="term__dim"> 3 files changed, 61 insertions(+), 18 deletions(-)</span></pre>
+        <div class="git__issue">
+          <span class="status-icon" data-git-icon aria-hidden="true"></span>
+          <span class="mono git__id">CRN-214</span>
+          <span class="git__title">Webhook retries double-charge when Stripe times out</span>
+          <span class="git__state" data-git-state>In progress</span>
+        </div>
+        <p class="git__event" data-git-event>Pull request #482 merged into main by Mirela Kovač</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="keys-section" aria-labelledby="keys-title">
+    <div class="wrap keys-grid">
+      <div class="section-head section-head--narrow">
+        <h2 id="keys-title">Most of Cairn is one keystroke away.</h2>
+        <p>Every action has a shortcut and a menu item, so new teammates can click until the keys stick. <kbd>Cmd</kbd> <kbd>K</kbd> opens a command bar that searches issues, people and actions together.</p>
+      </div>
+      <dl class="shortcuts">
+        <div><dt><kbd>C</kbd></dt><dd>Create an issue</dd></div>
+        <div><dt><kbd>S</kbd></dt><dd>Change status</dd></div>
+        <div><dt><kbd>A</kbd></dt><dd>Assign to someone</dd></div>
+        <div><dt><kbd>P</kbd></dt><dd>Set priority</dd></div>
+        <div><dt><kbd>L</kbd></dt><dd>Add a label</dd></div>
+        <div><dt><kbd>Shift</kbd> <kbd>C</kbd></dt><dd>Add to current cycle</dd></div>
+        <div><dt><kbd>G</kbd> then <kbd>I</kbd></dt><dd>Go to inbox</dd></div>
+        <div><dt><kbd>G</kbd> then <kbd>M</kbd></dt><dd>Go to my issues</dd></div>
+        <div><dt><kbd>/</kbd></dt><dd>Filter the current view</dd></div>
+        <div><dt><kbd>Cmd</kbd> <kbd>.</kbd></dt><dd>Copy issue ID and title</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="omit" aria-labelledby="omit-title">
+    <div class="wrap omit__grid">
+      <h2 id="omit-title">What we left out, on purpose.</h2>
+      <ul class="omit__list">
+        <li><h3>Story points</h3><p>Issues are small, medium or large. Small teams estimate better in conversation than in Fibonacci.</p></li>
+        <li><h3>A workflow builder</h3><p>Every team gets the same five statuses. You can rename them; you can't build a 14-step approval chain.</p></li>
+        <li><h3>Gantt charts and roadmaps</h3><p>Cairn plans one cycle ahead. For the quarter, a shared doc does the job better.</p></li>
+        <li><h3>Admin tiers</h3><p>Everyone on the team can do everything, and every change is in the issue history.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="pricing-title">Two plans, priced per person.</h2>
+        <p>Guests, like a designer or a client reviewing a release, are free on both plans.</p>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <h3>Free</h3>
+          <p class="plan__price"><span class="plan__amount">$0</span> for up to 10 people</p>
+          <ul>
+            <li>Unlimited issues and cycles</li>
+            <li>GitHub and GitLab integration</li>
+            <li>Slack notifications and changelog posts</li>
+            <li>Export to CSV or JSON any time</li>
+          </ul>
+          <a class="btn btn--ghost" href="#start">Start free</a>
+        </article>
+        <article class="plan plan--team">
+          <h3>Team</h3>
+          <p class="plan__price"><span class="plan__amount">$7</span> per person a month, billed monthly</p>
+          <ul>
+            <li>Everything in Free, for any team size</li>
+            <li>Sign in with Google Workspace or Okta</li>
+            <li>Full issue history and audit log</li>
+            <li>Private projects for security and HR work</li>
+            <li>Email support answered by the people who build Cairn</li>
+          </ul>
+          <a class="btn btn--primary" href="#start">Start a 30 day trial</a>
+        </article>
+      </div>
+      <p class="pricing__note">Past about 25 engineers, teams usually need the workflow rules we left out. If that's you, we'll say so and help you export.</p>
+    </div>
+  </section>
+
+  <section class="start" id="start" aria-labelledby="start-title">
+    <div class="wrap start__grid">
+      <div>
+        <h2 id="start-title">Set up a workspace before your next standup.</h2>
+        <p>Import from GitHub Issues, Jira or a CSV. Most teams are triaging in Cairn within fifteen minutes.</p>
+      </div>
+      <form class="signup" data-signup novalidate>
+        <label for="email">Work email</label>
+        <div class="signup__row">
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@company.com" aria-describedby="email-msg">
+          <button class="btn btn--primary" type="submit">Start a workspace</button>
+        </div>
+        <p id="email-msg" class="signup__msg" data-signup-msg aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="brand" href="#top" aria-label="Back to top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="11" y="6" width="10" height="5" rx="2.5" fill="var(--accent)"/><rect x="8" y="13" width="16" height="5" rx="2.5"/><rect x="5" y="20" width="22" height="6" rx="3"/></svg><span>Cairn</span></a>
+    <ul class="footer__links">
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="mailto:hello@cairn.dev">hello@cairn.dev</a></li>
+    </ul>
+    <p class="footer__small">Made by a five person team in Rotterdam.</p>
+  </div>
+</footer>
+</body>
+</html>

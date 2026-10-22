@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kestrel — Issue tracking for small engineering teams</title>
+<meta name="description" content="Kestrel is a fast, keyboard-first issue tracker built for engineering teams of 3 to 30.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c6cff'/%3E%3Cpath d='M9 22 L16 9 L23 22 Z' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Kestrel home">
+      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="url(#g)"/><path d="M9 22 L16 9 L23 22 Z" fill="#fff"/><defs><linearGradient id="g" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#8b7dff"/><stop offset="1" stop-color="#5b4be0"/></linearGradient></defs></svg>
+      <span>Kestrel</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#keyboard">Keyboard</a>
+      <a href="#cycles">Cycles</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="link-muted hide-sm" href="#pricing">Log in</a>
+      <a class="btn btn-primary btn-sm" href="#start">Start free</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap hero-copy">
+    <a class="pill" href="#cycles"><span class="pill-tag">New</span> Cycle reports that write themselves <span aria-hidden="true">→</span></a>
+    <h1>Issue tracking that stays out of your team's way</h1>
+    <p class="lede">Kestrel is a fast, keyboard-first tracker for engineering teams of 3 to 30. Plan cycles, triage bugs, and ship from one quiet place, without the process overhead built for companies a hundred times your size.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#start">Start free</a>
+      <a class="btn btn-ghost" href="#keyboard"><kbd>⌘</kbd><kbd>K</kbd> Try the demo</a>
+    </div>
+    <p class="fine">Free for up to 5 people. No credit card.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="app" role="img" aria-label="Kestrel app showing the Active cycle issue list">
+      <div class="app-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="app-url">app.kestrel.dev/platform/cycle-24</span>
+      </div>
+      <div class="app-body">
+        <aside class="app-side">
+          <div class="ws"><span class="ws-logo">A</span> Acme Labs</div>
+          <ul>
+            <li><span class="i">◎</span> Inbox <b>3</b></li>
+            <li><span class="i">◇</span> My issues</li>
+          </ul>
+          <p class="side-h">Platform</p>
+          <ul>
+            <li><span class="i">≡</span> Backlog</li>
+            <li class="on"><span class="i">↻</span> Cycle 24</li>
+            <li><span class="i">▦</span> Roadmap</li>
+          </ul>
+          <p class="side-h">Mobile</p>
+          <ul>
+            <li><span class="i">≡</span> Backlog</li>
+            <li><span class="i">↻</span> Cycle 11</li>
+          </ul>
+        </aside>
+        <div class="app-main">
+          <div class="app-head">
+            <div><strong>Cycle 24</strong> <span class="muted">Oct 14 – Oct 28</span></div>
+            <div class="progress"><span style="width:64%"></span></div>
+            <span class="muted sm">64%</span>
+          </div>
+          <div class="group"><span class="st st-prog"></span> In progress <span class="muted">3</span></div>
+          <div class="row"><span class="pri p-urg">!</span><span class="id">PLT-412</span><span class="title">Webhook retries drop events after 3rd attempt</span><span class="lbl l-bug">Bug</span><span class="av" style="--c:#f59e0b">MR</span></div>
+          <div class="row"><span class="pri p-hi">▮▮▮</span><span class="id">PLT-398</span><span class="title">Move session store to Redis cluster</span><span class="lbl l-infra">Infra</span><span class="av" style="--c:#10b981">JT</span></div>
+          <div class="row"><span class="pri p-md">▮▮▯</span><span class="id">PLT-405</span><span class="title">Rate limit headers on public API</span><span class="lbl l-api">API</span><span class="av" style="--c:#6366f1">SK</span></div>
+          <div class="group"><span class="st st-todo"></span> Todo <span class="muted">2</span></div>
+          <div class="row"><span class="pri p-md">▮▮▯</span><span class="id">PLT-417</span><span class="title">Audit log export to CSV</span><span class="lbl l-feat">Feature</span><span class="av" style="--c:#ec4899">AL</span></div>
+          <div class="row"><span class="pri p-lo">▮▯▯</span><span class="id">PLT-420</span><span class="title">Remove legacy v1 billing endpoints</span><span class="lbl l-api">API</span><span class="av" style="--c:#10b981">JT</span></div>
+          <div class="group"><span class="st st-done"></span> Done <span class="muted">9</span></div>
+          <div class="row done"><span class="pri p-hi">▮▮▮</span><span class="id">PLT-389</span><span class="title">Fix N+1 query on project dashboard</span><span class="lbl l-bug">Bug</span><span class="av" style="--c:#f59e0b">MR</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="logos wrap" aria-label="Teams using Kestrel">
+  <p>Small teams shipping with Kestrel</p>
+  <ul>
+    <li>Northwind</li><li>Fieldnote</li><li>Parallax</li><li>Brightline</li><li>Oxbow</li><li>Tessera</li>
+  </ul>
+</section>
+
+<section class="section wrap" id="features">
+  <p class="eyebrow">Features</p>
+  <h2>Everything a small team needs. Nothing it has to maintain.</h2>
+  <p class="sub">No custom field sprawl, no workflow builder, no admin. Sensible defaults that you can change in a minute.</p>
+  <div class="grid">
+    <article class="card">
+      <div class="ic">⌘</div>
+      <h3>Keyboard first</h3>
+      <p>Create, assign, and close issues without touching the mouse. Every action has a shortcut and lives in the command menu.</p>
+    </article>
+    <article class="card">
+      <div class="ic">↻</div>
+      <h3>Two-week cycles</h3>
+      <p>Unfinished work rolls over automatically. Scope changes are tracked, so planning stays honest.</p>
+    </article>
+    <article class="card">
+      <div class="ic">◎</div>
+      <h3>Triage inbox</h3>
+      <p>Bug reports from Slack, email, and Sentry land in one queue. Accept, merge duplicates, or decline in a keystroke.</p>
+    </article>
+    <article class="card">
+      <div class="ic">⑂</div>
+      <h3>GitHub and GitLab sync</h3>
+      <p>Mention <code>PLT-412</code> in a branch and the issue moves to In progress. Merge the PR and it closes.</p>
+    </article>
+    <article class="card">
+      <div class="ic">⚡</div>
+      <h3>Instant everywhere</h3>
+      <p>A local-first sync engine means views open in under 50&nbsp;ms and changes appear for teammates in real time.</p>
+    </article>
+    <article class="card">
+      <div class="ic">▦</div>
+      <h3>Lightweight roadmap</h3>
+      <p>Group issues into projects with a target date. See what's on track at a glance, no Gantt chart required.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section wrap split" id="keyboard">
+  <div>
+    <p class="eyebrow">Command menu</p>
+    <h2>Press <kbd>⌘</kbd><kbd>K</kbd>. Do anything.</h2>
+    <p class="sub">The command menu searches issues, people, and actions at once. Try it here: type to filter, use the arrow keys, press Enter.</p>
+    <ul class="shortcuts">
+      <li><kbd>C</kbd> Create issue</li>
+      <li><kbd>A</kbd> Assign</li>
+      <li><kbd>P</kbd> Set priority</li>
+      <li><kbd>G</kbd><kbd>I</kbd> Go to inbox</li>
+    </ul>
+  </div>
+  <div class="palette" id="palette">
+    <div class="palette-input">
+      <span class="muted">⌕</span>
+      <input id="paletteInput" type="text" placeholder="Type a command or search…" aria-label="Command search" autocomplete="off">
+      <kbd>esc</kbd>
+    </div>
+    <ul class="palette-list" id="paletteList" role="listbox" aria-label="Commands"></ul>
+    <p class="palette-toast" id="paletteToast" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="section wrap split rev" id="cycles">
+  <div>
+    <p class="eyebrow">Cycles</p>
+    <h2>Know where the sprint stands before standup</h2>
+    <p class="sub">Each cycle tracks scope, completed work, and what got added mid-flight. At the end, Kestrel writes a short report you can paste into Slack.</p>
+    <ul class="checks">
+      <li>Automatic rollover of unfinished issues</li>
+      <li>Scope creep shown on the burn-up chart</li>
+      <li>Per-person load so nobody is quietly overbooked</li>
+    </ul>
+  </div>
+  <div class="chart-card">
+    <div class="chart-head">
+      <div><strong>Cycle 24</strong><span class="muted sm"> · Platform</span></div>
+      <span class="tag-ok">On track</span>
+    </div>
+    <svg viewBox="0 0 400 200" class="chart" aria-label="Burn-up chart: scope 34 points, 22 completed">
+      <g stroke="#262a36" stroke-width="1">
+        <line x1="0" y1="40" x2="400" y2="40"/><line x1="0" y1="90" x2="400" y2="90"/><line x1="0" y1="140" x2="400" y2="140"/><line x1="0" y1="190" x2="400" y2="190"/>
+      </g>
+      <polyline points="0,70 120,70 160,55 400,55" fill="none" stroke="#5c6273" stroke-width="2" stroke-dasharray="5 5"/>
+      <path d="M0,190 L40,178 L80,160 L120,150 L160,128 L200,112 L240,96 L260,92 L260,190 Z" fill="url(#burn)"/>
+      <polyline points="0,190 40,178 80,160 120,150 160,128 200,112 240,96 260,92" fill="none" stroke="#8b7dff" stroke-width="2.5"/>
+      <circle cx="260" cy="92" r="4.5" fill="#8b7dff"/>
+      <defs><linearGradient id="burn" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8b7dff" stop-opacity=".35"/><stop offset="1" stop-color="#8b7dff" stop-opacity="0"/></linearGradient></defs>
+    </svg>
+    <div class="stats">
+      <div><b>34</b><span>Scope</span></div>
+      <div><b>22</b><span>Completed</span></div>
+      <div><b>+4</b><span>Added</span></div>
+      <div><b>6</b><span>Days left</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <p class="eyebrow">From the teams</p>
+  <h2>Less tracking, more shipping</h2>
+  <div class="quotes">
+    <figure class="quote">
+      <blockquote>“We moved off Jira in an afternoon. Standups went from 25 minutes to 8 because everyone already knows the state of the cycle.”</blockquote>
+      <figcaption><span class="av lg" style="--c:#f59e0b">PN</span><span><b>Priya Nair</b><br><span class="muted">Eng lead, Fieldnote · 9 engineers</span></span></figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>“The GitHub sync is the whole thing for us. Nobody updates tickets by hand anymore, and they're still accurate.”</blockquote>
+      <figcaption><span class="av lg" style="--c:#10b981">DO</span><span><b>Daniel Okafor</b><br><span class="muted">CTO, Oxbow · 5 engineers</span></span></figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>“It's fast enough that I actually triage bugs on my phone between meetings.”</blockquote>
+      <figcaption><span class="av lg" style="--c:#ec4899">ML</span><span><b>Mei Lin</b><br><span class="muted">Staff engineer, Parallax · 22 engineers</span></span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section wrap" id="pricing">
+  <p class="eyebrow">Pricing</p>
+  <h2>Priced for teams, not enterprises</h2>
+  <div class="billing" role="group" aria-label="Billing period">
+    <button class="bill on" data-period="monthly" aria-pressed="true">Monthly</button>
+    <button class="bill" data-period="annual" aria-pressed="false">Annual <span class="save">−20%</span></button>
+  </div>
+  <div class="plans">
+    <article class="plan">
+      <h3>Free</h3>
+      <p class="price"><b>$0</b></p>
+      <p class="muted">For side projects and very small teams.</p>
+      <ul class="checks">
+        <li>Up to 5 members</li><li>Unlimited issues</li><li>Cycles and triage</li><li>GitHub sync</li>
+      </ul>
+      <a class="btn btn-ghost full" href="#start">Start free</a>
+    </article>
+    <article class="plan featured">
+      <span class="badge">Most teams</span>
+      <h3>Team</h3>
+      <p class="price"><b data-monthly="$8" data-annual="$6">$8</b><span class="muted"> / member / month</span></p>
+      <p class="muted">For growing teams that ship every week.</p>
+      <ul class="checks">
+        <li>Up to 30 members</li><li>Roadmap and projects</li><li>Cycle reports and insights</li><li>Slack, Sentry, and GitLab</li><li>Guest access</li>
+      </ul>
+      <a class="btn btn-primary full" href="#start">Start 14-day trial</a>
+    </article>
+    <article class="plan">
+      <h3>Scale</h3>
+      <p class="price"><b data-monthly="$14" data-annual="$11">$14</b><span class="muted"> / member / month</span></p>
+      <p class="muted">For teams that need controls and audit trails.</p>
+      <ul class="checks">
+        <li>Unlimited members</li><li>SAML SSO and SCIM</li><li>Audit log</li><li>Priority support</li>
+      </ul>
+      <a class="btn btn-ghost full" href="#start">Contact us</a>
+    </article>
+  </div>
+</section>
+
+<section class="section wrap narrow" id="faq">
+  <p class="eyebrow">FAQ</p>
+  <h2>Questions, answered</h2>
+  <details open><summary>Can we import from Jira, GitHub Issues, or Linear?</summary><p>Yes. The importer brings over issues, comments, labels, and assignees. Most teams finish in under ten minutes.</p></details>
+  <details><summary>What happens when we grow past 5 people on Free?</summary><p>Nothing breaks. You'll be asked to upgrade before inviting a sixth member, and your existing data stays put.</p></details>
+  <details><summary>Does Kestrel work offline?</summary><p>Yes. The app keeps a local copy of your workspace, so you can read and edit issues offline. Changes sync when you reconnect.</p></details>
+  <details><summary>Where is our data stored?</summary><p>In encrypted Postgres databases in the EU or US, your choice. You can export everything as JSON or CSV at any time.</p></details>
+</section>
+
+<section class="cta wrap" id="start">
+  <h2>Set up your team in two minutes</h2>
+  <p class="sub">Create a workspace, invite your team, and import your backlog.</p>
+  <form class="signup" id="signup">
+    <label class="sr" for="email">Work email</label>
+    <input id="email" type="email" placeholder="you@company.com" required>
+    <button class="btn btn-primary" type="submit">Start free</button>
+  </form>
+  <p class="fine" id="signupMsg" aria-live="polite">Free for up to 5 people. No credit card.</p>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-inner">
+    <div>
+      <a class="brand" href="#top"><svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#7c6cff"/><path d="M9 22 L16 9 L23 22 Z" fill="#fff"/></svg><span>Kestrel</span></a>
+      <p class="muted sm">Issue tracking for small engineering teams.</p>
+    </div>
+    <div class="foot-cols">
+      <div><h4>Product</h4><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#cycles">Cycles</a></div>
+      <div><h4>Company</h4><a href="#top">About</a><a href="#top">Blog</a><a href="#top">Careers</a></div>
+      <div><h4>Resources</h4><a href="#faq">FAQ</a><a href="#top">Docs</a><a href="#top">Status</a></div>
+    </div>
+  </div>
+  <div class="wrap foot-bottom muted sm">© 2026 Kestrel Labs</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
