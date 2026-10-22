@@ -1,0 +1,73 @@
+name: Sync from CodexClaw
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      actions: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BLOCKED_TITLE: Sync from CodexClaw is blocked
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch CodexClaw
+        run: git clone --depth 1 https://github.com/lidge-jun/codexclaw.git "$RUNNER_TEMP/codexclaw"
+      - name: Sync
+        run: node scripts/sync-from-codexclaw.mjs --source "$RUNNER_TEMP/codexclaw" 2>&1 | tee "$RUNNER_TEMP/sync.log"
+      - name: Check
+        run: |
+          npm install --no-save --no-package-lock yaml@2.6.1
+          node tests/check.mjs 2>&1 | tee -a "$RUNNER_TEMP/sync.log"
+      - name: Open pull request
+        run: |
+          open="$(gh pr list --head sync/codexclaw --state open --json number -q '.[0].number')"
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "already in sync"
+            if [ -n "$open" ]; then gh pr close "$open" --comment "Upstream and main already match; closing this stale sync."; fi
+            exit 0
+          fi
+          commit="$(node -p "require('./upstream.json').commit.slice(0, 12)")"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B sync/codexclaw
+          git add -A
+          git commit -m "sync: codexclaw $commit"
+          git push -f origin sync/codexclaw
+          body="Skill references synced from lidge-jun/codexclaw@$commit by scripts/sync-from-codexclaw.mjs. Check skills runs on this branch through workflow_dispatch."
+          if [ -n "$open" ]; then
+            gh pr edit "$open" --title "sync: codexclaw $commit" --body "$body"
+          else
+            gh pr create --base main --head sync/codexclaw --title "sync: codexclaw $commit" --body "$body"
+          fi
+          gh workflow run check.yml --ref sync/codexclaw
+      - name: Close blocked issue
+        if: success()
+        run: |
+          for n in $(gh issue list --state open --search "in:title \"$BLOCKED_TITLE\"" --json number,title -q ".[] | select(.title == env.BLOCKED_TITLE) | .number"); do
+            gh issue close "$n" --comment "Sync succeeded in run $GITHUB_RUN_ID."
+          done
+      - name: Report blocked sync
+        if: failure()
+        run: |
+          log="$(tail -n 60 "$RUNNER_TEMP/sync.log" 2>/dev/null || echo 'no log')"
+          body="$(printf 'Run: %s/%s/actions/runs/%s\n\n%s\n%s\n%s\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" '~~~' "$log" '~~~')"
+          n="$(gh issue list --state open --search "in:title \"$BLOCKED_TITLE\"" --json number,title -q ".[] | select(.title == env.BLOCKED_TITLE) | .number" | head -n 1)"
+          if [ -n "$n" ]; then gh issue comment "$n" --body "$body"; else gh issue create --title "$BLOCKED_TITLE" --body "$body"; fi

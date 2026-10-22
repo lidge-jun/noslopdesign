@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/lidge-jun/codexclaw",
+  "commit": "1cbfcbb214e1c222108d1f4e58d0d01dd3f4f6b3",
+  "skills": [
+    {
+      "from": "plugins/codexclaw/skills/dev-frontend",
+      "to": "skills/noslop-frontend"
+    },
+    {
+      "from": "plugins/codexclaw/skills/dev-uiux-design",
+      "to": "skills/noslop-uiux"
+    }
+  ]
+}

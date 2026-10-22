@@ -1,0 +1,35 @@
+name: Check skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Frontmatter, links, orphans, versions and leftover references
+        run: |
+          npm install --no-save --no-package-lock yaml@2.6.1
+          node tests/check.mjs
+      - name: Shell scripts parse
+        run: |
+          shopt -s nullglob
+          for f in install.sh skills/*/scripts/*.sh; do bash -n "$f"; done
+          bash install.sh --list
+      - name: Synced files match the pinned upstream commit
+        run: |
+          commit="$(node -p "require('./upstream.json').commit")"
+          git init -q "$RUNNER_TEMP/codexclaw"
+          git -C "$RUNNER_TEMP/codexclaw" fetch -q --depth 1 https://github.com/lidge-jun/codexclaw.git "$commit"
+          git -C "$RUNNER_TEMP/codexclaw" checkout -q FETCH_HEAD
+          node scripts/sync-from-codexclaw.mjs --source "$RUNNER_TEMP/codexclaw" --check

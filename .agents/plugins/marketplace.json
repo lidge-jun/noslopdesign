@@ -1,0 +1,21 @@
+{
+  "name": "noslopdesign",
+  "interface": {
+    "displayName": "noslopdesign"
+  },
+  "plugins": [
+    {
+      "name": "noslopdesign",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lidge-jun/noslopdesign.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    }
+  ]
+}

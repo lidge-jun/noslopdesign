@@ -1,0 +1,34 @@
+{
+  "name": "noslopdesign",
+  "version": "0.1.0",
+  "description": "Anti-slop design skills for coding agents: noslop-frontend builds pages and app screens that do not look AI-made, noslop-uiux decides the direction first.",
+  "author": {
+    "name": "lidge-jun",
+    "url": "https://github.com/lidge-jun"
+  },
+  "homepage": "https://github.com/lidge-jun/noslopdesign",
+  "repository": "https://github.com/lidge-jun/noslopdesign",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "frontend",
+    "uiux",
+    "design",
+    "anti-slop"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "noslopdesign",
+    "shortDescription": "Pages and app screens that do not look AI-made.",
+    "longDescription": "Two skills from lidge-jun/noslopdesign: noslop-frontend builds, redesigns and fixes pages and app screens with a real-browser check; noslop-uiux sets the design direction, UX states and brand before code.",
+    "developerName": "lidge-jun",
+    "category": "Design",
+    "capabilities": [],
+    "websiteURL": "https://github.com/lidge-jun/noslopdesign",
+    "defaultPrompt": [
+      "Make a SaaS homepage that does not look AI-made.",
+      "Redesign this page so it stops looking generic.",
+      "Pick a design direction for this product before we build it."
+    ]
+  }
+}
