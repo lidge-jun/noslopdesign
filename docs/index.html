@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>noslopdesign · design skills that mark up AI slop</title>
+<meta name="description" content="Two Agent Skills and a linter that stop coding agents from shipping the average AI page. Korean-first. Works in Codex, Claude Code and Cursor.">
+<meta property="og:title" content="noslopdesign">
+<meta property="og:description" content="Your agent's page, corrected. Two skills and a linter against AI-looking UI.">
+<meta property="og:image" content="https://lidge-jun.github.io/noslopdesign/og.png">
+<meta name="theme-color" content="#f4f4f1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="bar">
+  <a class="mark" href="./" aria-label="noslopdesign home">noslop<span>design</span></a>
+  <nav aria-label="Primary">
+    <a href="#how">How it works</a>
+    <a href="#gates">Gates</a>
+    <a href="#install">Install</a>
+    <a href="https://github.com/lidge-jun/noslopdesign">GitHub</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="kicker">v0.2.0 · MIT · Codex, Claude Code, Cursor</p>
+    <h1 id="hero-title">Your agent’s page, <em>corrected.</em></h1>
+    <p class="lede">Ask a coding agent for a SaaS homepage and it builds the same one everyone gets.
+      noslopdesign is two skills and a linter that mark up that page the way an editor marks up a draft,
+      then send the agent back to fix it.</p>
+    <p class="lede ko" lang="ko">코딩 에이전트가 만든 “AI 티 나는” 페이지에 빨간 펜을 대고, 고칠 때까지 돌려보냅니다.</p>
+    <div class="install" role="group" aria-label="Install command">
+      <code id="cmd">npx skills add https://github.com/lidge-jun/noslopdesign</code>
+      <button type="button" class="copy" data-copy="#cmd">Copy</button>
+    </div>
+    <p class="try">Then try <code>$noslop-frontend SaaS 홈페이지 멋있게 만들어줘</code></p>
+  </div>
+
+  <figure class="proof" aria-label="A generic AI hero section marked up with rule IDs">
+    <!-- noslop-allow NS-PURPLE-GRADIENT: this is the specimen of slop the page corrects -->
+    <!-- noslop-allow NS-BUZZWORD: this is the specimen of slop the page corrects -->
+    <!-- noslop-allow NS-VANITY-METRIC: this is the specimen of slop the page corrects -->
+    <!-- noslop-allow NS-APHORISM: this is the specimen of slop the page corrects -->
+    <!-- noslop-allow NS-GRADIENT-TEXT: this is the specimen of slop the page corrects -->
+    <div class="specimen" aria-hidden="true">
+      <div class="s-nav"><span class="s-logo">Nexora</span><span class="s-pill">Get started</span></div>
+      <p class="s-eyebrow">INTRODUCING NEXORA AI</p>
+      <p class="s-h1">Elevate your workflow</p>
+      <p class="s-h2">Not a tool. A platform.</p>
+      <p class="s-sub">Trusted by 10,000+ teams worldwide</p>
+      <div class="s-cards"><span></span><span></span><span></span></div>
+    </div>
+    <ol class="notes">
+      <li style="--y:14%"><b>NS-EYEBROW</b> tracked caps above the heading</li>
+      <li style="--y:30%"><b>NS-BUZZWORD</b> “Elevate” says nothing</li>
+      <li style="--y:45%"><b>NS-APHORISM</b> theatrical contrast</li>
+      <li style="--y:60%"><b>NS-VANITY-METRIC</b> round number, no source</li>
+      <li style="--y:78%"><b>NS-ICON-TILE</b> three equal cards</li>
+      <li style="--y:94%"><b>NS-PURPLE-GRADIENT</b> the background of every AI page</li>
+    </ol>
+    <figcaption>A hand-built specimen of the default AI hero, with the findings sloplint reports for it.</figcaption>
+  </figure>
+</section>
+
+<section id="how" class="band" aria-labelledby="how-title">
+  <h2 id="how-title">How a build runs</h2>
+  <p class="section-lede">One request, six moves. The agent cannot call it done until the page has been looked at.</p>
+  <div class="run">
+<pre class="term" aria-label="Example run"><span class="p">you</span>  $noslop-frontend make a SaaS homepage for a bank reconciliation tool
+<span class="a">agent</span> size C3 · surface landing · locale ko+en · assets: product screenshots
+<span class="a">agent</span> brief is vague → noslop-uiux Design Read → direction locked in DESIGN.md
+<span class="a">agent</span> build: real screenshots, one accent, Pretendard + Plex Mono for figures
+<span class="a">agent</span> sloplint ./src → 2 reflex: NS-EYEBROW, NS-BORDER-SHADOW → fixed
+<span class="a">agent</span> browser 390 / 768 / 1440 → hero wraps badly at 390 → fixed, re-shot
+<span class="ok">done</span>  checked: sloplint 0 blocking · 3 widths · keyboard pass · axe 0</pre>
+    <ol class="steps">
+      <li><h3>Size and route</h3><p>Copy fix or new surface; landing, app or dashboard; locale; density; which assets are real.</p></li>
+      <li><h3>Decide the direction</h3><p><code>noslop-uiux</code> turns “make it look good” into one direction and writes it to <code>DESIGN.md</code>.</p></li>
+      <li><h3>Build with real material</h3><p>Product screenshots, real numbers, real copy. No gradient blobs standing in for a product.</p></li>
+      <li><h3>Lint the tells</h3><p><code>sloplint</code> catches the static ones before a browser even opens.</p></li>
+      <li><h3>Look at it</h3><p>Three widths in a real browser. Screenshots are read, not just taken.</p></li>
+      <li><h3>Report the evidence</h3><p>What was checked and how, so “done” means something.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="gates" class="band alt" aria-labelledby="gates-title">
+  <h2 id="gates-title">Three tiers of “no”</h2>
+  <p class="section-lede">Not every rule is a wall. The floor never moves; reflexes need a written reason; finish is taste.</p>
+  <div class="tiers">
+    <article class="tier floor">
+      <h3>Floor <span>never ships</span></h3>
+      <ul><li><code>NS-ZOOM</code> viewport blocks zoom</li><li><code>NS-FOCUS-GONE</code> outline removed, nothing in its place</li><li><code>NS-PLACEHOLDER</code> filler copy and stand-in names</li><li><code>NS-EMOJI-UI</code> emoji as icons</li></ul>
+    </article>
+    <article class="tier reflex">
+      <h3>Reflex <span>needs a reason</span></h3>
+      <ul><li><code>NS-PURPLE-GRADIENT</code></li><li><code>NS-INTER-ONLY</code></li><li><code>NS-BUZZWORD</code> elevate, seamless, unleash</li><li><code>NS-VANITY-METRIC</code> 10,000+ teams</li></ul>
+      <p class="allow"><code>/* noslop-allow NS-GRADIENT-TEXT: licensed wordmark */</code></p>
+    </article>
+    <article class="tier finish">
+      <h3>Finish <span>never blocks</span></h3>
+      <ul><li><code>NS-TEXT-WRAP</code> headings without balance</li><li><code>NS-100VH</code> use 100dvh</li><li><code>NS-TRANSITION-ALL</code></li><li><code>NS-EM-DASH</code> too many dashes</li></ul>
+    </article>
+  </div>
+<pre class="term small" aria-label="sloplint output">$ node skills/noslop-frontend/scripts/sloplint.mjs ./index.html
+[floor]  NS-ZOOM            index.html:2   Viewport blocks zoom.
+[reflex] NS-PURPLE-GRADIENT index.html:4   Purple or indigo gradient.
+[reflex] NS-BUZZWORD        index.html:5   Generated marketing verbs.
+not ok - 1 file(s), 3 blocking, 0 advisory</pre>
+</section>
+
+<section class="band" aria-labelledby="skills-title">
+  <h2 id="skills-title">Two skills, one front door</h2>
+  <div class="pair">
+    <article>
+      <h3><code>noslop-frontend</code></h3>
+      <p>Builds, redesigns and fixes pages and app screens in your stack. Start here; it calls the other skill when the brief is vague.</p>
+      <p class="modes">build · redesign · polish · audit · critique · bolder · quieter · harden</p>
+    </article>
+    <article>
+      <h3><code>noslop-uiux</code></h3>
+      <p>Direction before code: intent discovery, Design Read, concept mockups, design systems, UX states, logos and favicons.</p>
+      <p class="modes" lang="ko">깔끔하게 · 모던하게 · 감성적으로 · 토스 느낌 · Linear처럼</p>
+    </article>
+  </div>
+  <p class="korean" lang="ko">한글 타이포그래피와 줄바꿈, 한국어 UX 라이팅, 한국 서비스 패턴까지 다룹니다. 영어권 anti-slop 스킬이 비워 둔 자리입니다.</p>
+</section>
+
+<section id="install" class="band alt" aria-labelledby="install-title">
+  <h2 id="install-title">Install</h2>
+  <table class="ways">
+    <thead><tr><th scope="col">Route</th><th scope="col">Command</th><th scope="col">Call it</th></tr></thead>
+    <tbody>
+      <tr><td>npx skills</td><td><code>npx skills add https://github.com/lidge-jun/noslopdesign</code></td><td><code>$noslop-frontend</code> · <code>/noslop-frontend</code></td></tr>
+      <tr><td>Claude Code</td><td><code>/plugin marketplace add lidge-jun/noslopdesign</code></td><td><code>/noslopdesign:noslop-frontend</code></td></tr>
+      <tr><td>Codex</td><td><code>codex plugin marketplace add lidge-jun/noslopdesign</code></td><td><code>$noslopdesign:noslop-frontend</code></td></tr>
+      <tr><td>Clone</td><td><code>./install.sh --all-agents</code></td><td><code>$noslop-frontend</code></td></tr>
+    </tbody>
+  </table>
+</section>
+</main>
+
+<footer class="foot">
+  <p>MIT. Built on ideas from <a href="https://github.com/Leonxlnx/taste-skill">taste-skill</a>, <a href="https://github.com/Nutlope/hallmark">Hallmark</a>, <a href="https://github.com/pbakaus/impeccable">impeccable</a>, <a href="https://github.com/vercel-labs/web-interface-guidelines">Web Interface Guidelines</a> and <a href="https://github.com/VoltAgent/awesome-design-md">awesome-design-md</a>; references maintained in <a href="https://github.com/lidge-jun/codexclaw">CodexClaw</a>.</p>
+  <p><a href="https://github.com/lidge-jun/noslopdesign">github.com/lidge-jun/noslopdesign</a></p>
+</footer>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = document.querySelector(b.getAttribute('data-copy')).textContent;
+    navigator.clipboard.writeText(t).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1400); });
+  });
+});
+</script>
+</body>
+</html>
