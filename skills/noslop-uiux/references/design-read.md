@@ -1,8 +1,8 @@
-## 2. Design Read (MANDATORY for new pages, components, or layouts. Optional for ≤5-line patches — see dev §0.1 Patch Fast-Path.)
+## 2. Design Read (MANDATORY for new pages, components, or layouts. Optional for ≤5-line patches (work sizes C0/C1 in `noslop-frontend/SKILL.md`).)
 
 Before generating ANY frontend code, produce a Design Read. If the project has a `DESIGN.md` file, read it first — its tokens and prose override everything below.
 
-Inspect provided visual references with `view_image` before writing the Design
+Inspect provided visual references with the agent's image viewer before writing the Design
 Read. Asset production and rendered-requirement definition are owned by `noslop-frontend`;
 QA protocol and verification proof execution belong to the project's test workflow.
 
@@ -64,7 +64,7 @@ Inference rules:
 
 ### Dial Presets (UX-DIAL-PRESET-01, STYLE_SAMPLE)
 
-Source: taste-skill v2 (62k stars). Exact tuples for common use cases.
+Source: taste-skill v2. Exact tuples for common use cases.
 Presets are illustrative starting points, not authoritative constraints. They may
 fall outside the rough inference ranges. Prefer the brief, existing design system,
 accessibility and task evidence; record a different choice without treating it as failure.

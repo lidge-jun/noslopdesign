@@ -112,8 +112,6 @@ git clone https://github.com/lidge-jun/noslopdesign && cd noslopdesign
 복사해 오고, 바뀐 게 있으면 PR을 엽니다. [`upstream.json`](upstream.json)에 기준 CodexClaw 커밋이 남고,
 두 진입점 `SKILL.md`는 이 레포가 직접 관리하므로 동기화로 덮어쓰지 않습니다.
 
-## 출처와 라이선스
-
 ## 관리
 
 `skills/` 아래 동기화 파일은 손으로 고치지 않습니다. CodexClaw를 고치거나

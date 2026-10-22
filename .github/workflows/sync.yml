@@ -38,6 +38,7 @@ jobs:
           node tests/check.mjs 2>&1 | tee -a "$RUNNER_TEMP/sync.log"
       - name: Open pull request
         run: |
+          exec > >(tee -a "$RUNNER_TEMP/sync.log") 2>&1
           open="$(gh pr list --head sync/codexclaw --state open --json number -q '.[0].number')"
           if [ -z "$(git status --porcelain)" ]; then
             echo "already in sync"
@@ -53,7 +54,7 @@ jobs:
           git push -f origin sync/codexclaw
           body="Skill references synced from lidge-jun/codexclaw@$commit by scripts/sync-from-codexclaw.mjs. Check skills runs on this branch through workflow_dispatch."
           if [ -n "$open" ]; then
-            gh pr edit "$open" --title "sync: codexclaw $commit" --body "$body"
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/pulls/$open" -f title="sync: codexclaw $commit" -f body="$body" --silent
           else
             gh pr create --base main --head sync/codexclaw --title "sync: codexclaw $commit" --body "$body"
           fi

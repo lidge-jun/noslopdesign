@@ -8,7 +8,7 @@
 > The agent's base workflow owns universal process, evidence, and safety rules. `noslop-uiux` owns
 > design intent, direction, and concept judgment. `noslop-frontend` owns concrete frontend
 > implementation and rendered tell enforcement. Anti-slop has three layers: base workflow =
-> output/process hygiene (FAMILY-SLOP-01), `noslop-uiux` = concept/taste judgment
+> output/process hygiene, `noslop-uiux` = concept/taste judgment
 > (is this direction generic or domain-wrong?), `noslop-frontend` = rendered implementation
 > tell detection and removal (FE-AI-TELL-01).
 

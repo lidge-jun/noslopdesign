@@ -15,7 +15,7 @@ Files that adapt outside material say so on a `Source:` or `Adapted from` line. 
 | [Leonxlnx/imagegen-skills](https://github.com/Leonxlnx/imagegen-skills) (imagegen-frontend-web), Copyright (c) 2026 Leonxlnx | MIT | `noslop-frontend/references/core/asset-requirements.md` |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) detector catalog: rule patterns adapted, no verbatim text | Apache-2.0 | `noslop-frontend/references/core/anti-slop.md`, `a11y-patterns.md` |
 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (frontend-ui-engineering), Copyright (c) 2025 Addy Osmani | MIT | `noslop-uiux/references/anti-rationalization.md` |
-| Anthropic frontend-design skill, redesign-skill, Koomook | See each project | Ideas synthesized in `noslop-frontend/references/core/anti-slop.md` |
+| [Anthropic frontend-design skill](https://github.com/anthropics/skills), redesign-skill, Koomook | See each project | Ideas synthesized in `noslop-frontend/references/core/anti-slop.md` |
 
 `noslop-frontend/references/core/iterative-design.md` is written for this repo and is not synced from
 CodexClaw.

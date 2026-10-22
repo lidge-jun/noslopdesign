@@ -8,11 +8,11 @@ Read `aesthetics.md` for full guidelines. Summary:
 - **Motion**: See `motion.md`. One signature moment + a few
   supporting reveals > 10 scattered effects; landing-bucket floor/ceiling per
   FE-MOTION-BUCKET-01.
-- **Assets**: Use screenshots, product images, diagrams, charts, illustrations, generated bitmaps, or soft 3D only when they add product meaning. Never ship a placeholder. Prefer real/generated image or video assets over CSS gradient washes. Read any design reference or captured screenshot back into context with `view_image` before matching it. Third-party captures follow `reference-capture.md` (analysis-only, provenance manifest).
+- **Assets**: Use screenshots, product images, diagrams, charts, illustrations, generated bitmaps, or soft 3D only when they add product meaning. Never ship a placeholder. Prefer real/generated image or video assets over CSS gradient washes. Read any design reference or captured screenshot back into context with the agent's image viewer before matching it. Third-party captures follow `reference-capture.md` (analysis-only, provenance manifest).
 
   1. **Probe**: `ima2 status` → `ima2 serve` if down → recheck.
   2. **Generate**: `ima2 gen` with explicit long prompts; `--ref` for style anchors.
-  3. **Inspect**: `view_image` every candidate.
+  3. **Inspect**: open every candidate in the agent's image viewer.
   4. **Synthesize**: element ledger per FE-ASSET-SELECT-01.
   5. **Iterate**: `ima2 edit` for targeted fixes.
   6. **Verify**: browser screenshot of rendered result.
@@ -47,5 +47,5 @@ Read `aesthetics.md` for full guidelines. Summary:
   Keep size, optical weight, color behavior, and accessible labels consistent.
 
 ### Cutout Asset Generation
-Every cutout asset MUST follow `asset-requirements.md` § Asset Background Strategy; load it with `ima2 skill front ref asset-requirements` when ima2 is available.
+Every cutout asset MUST follow `asset-requirements.md` § Asset Background Strategy.
 ---

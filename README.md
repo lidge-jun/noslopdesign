@@ -123,8 +123,6 @@ node scripts/sync-from-codexclaw.mjs --source ../codexclaw --check  # fail if ou
 npm install && npm run check                                         # frontmatter, links, leftovers
 ```
 
-## Credits and license
-
 ## Maintaining
 
 Synced files under `skills/` are never edited by hand. Change CodexClaw, or add a rule to

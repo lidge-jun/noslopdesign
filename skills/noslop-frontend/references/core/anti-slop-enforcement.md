@@ -1,6 +1,6 @@
 ## 5. Anti-Slop Enforcement
 
-Rule classes (dev §0.2): items below are DEFAULT — deviate with a stated reason; concrete
+Rule classes (`noslop-frontend/SKILL.md`): items below are DEFAULT — deviate with a stated reason; concrete
 values and palettes are STYLE_SAMPLE (`design-intake.md` §1.5); the emoji-as-UI-icon ban is the only STRICT item.
 
 Read `anti-slop.md` for full rules. Key standards:

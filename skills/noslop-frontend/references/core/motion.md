@@ -1083,7 +1083,7 @@ Research: `devlog/_fin/260708_scroll_driven_effects/000_research.md`,
 
 ## Motion Honesty (FE-MOTION-HONESTY-01, DEFAULT)
 
-Source: taste-skill v2 (62k stars), adapted for codexclaw.
+Source: taste-skill v2, adapted for codexclaw.
 
 The declared MOTION_INTENSITY dial must match the shipped page's actual motion.
 A dial value above 4 that ships a static page is a lie — the motion was claimed

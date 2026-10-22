@@ -372,7 +372,7 @@ When fixing an existing project, apply in this order for max impact / min risk:
 
 ## Second-Order Reflex Test (FE-REFLEX-TEST-01, DEFAULT)
 
-Source: impeccable (40k stars, 2026-07-12 research).
+Source: impeccable.
 
 Anti-slop detection operates at two levels:
 
@@ -392,7 +392,7 @@ of the obvious choice."
 
 ## Convergence Composition Tells (FE-CONVERGENCE-01, DEFAULT)
 
-Source: impeccable detector catalog (46 rules, 8 domains) + taste-skill v2 (62k stars).
+Source: impeccable detector catalog (46 rules, 8 domains) + taste-skill v2.
 
 These are specific multi-element compositions that are statistically overproduced
 by AI agents. A single trait may be legitimate; the convergence signature is the

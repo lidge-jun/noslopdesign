@@ -177,7 +177,7 @@ ima2 gen "<detailed prompt>" -n 4 -d ./candidates --quality high
 ima2 multimode "<detailed prompt>" --max-images 4 -d ./candidates
 ```
 
-After generation, inspect every candidate with `view_image` before selecting.
+After generation, inspect every candidate with the agent's image viewer before selecting.
 Do not blindly use the first result.
 
 ### Parallel Generation Patterns (FE-ASSET-PARALLEL-01, DEFAULT)
@@ -246,7 +246,7 @@ After generating multiple candidates (via `-n`, multimode, or independent
 parallel), select using a two-stage process:
 
 **Stage 1 — Exploration (broad):** Generate 3-5 candidates with different
-directions. Inspect all with `view_image`. Do not select yet.
+directions. Inspect all with the agent's image viewer. Do not select yet.
 
 **Stage 2 — Synthesis (not winner-picking):** Do NOT pick one winner. Build
 an element ledger — for each design token (palette, composition, type
@@ -269,7 +269,7 @@ Rate each candidate on these axes before synthesizing:
 
 #### `$imagegen` Fallback
 
-With `$imagegen`, generate 1-2 candidates, inspect with `view_image`, refine
+With `$imagegen`, generate 1-2 candidates, inspect with the agent's image viewer, refine
 the prompt based on what is wrong, and iterate. The synthesis step still
 applies when comparing across iteration rounds.
 
@@ -397,7 +397,7 @@ solid-background strategy above.
 
 ### Prompt Iteration
 
-- Start with one high-detail prompt. Inspect the result with `view_image`.
+- Start with one high-detail prompt. Inspect the result with the agent's image viewer.
 - On the next iteration, make ONE targeted change and re-specify all constraints.
   Do not rewrite the entire prompt from scratch.
 - Repeat invariants every iteration to prevent drift.
@@ -434,7 +434,7 @@ ima2 gen "Use case: stylized-concept. Asset type: user avatar. Friendly stylized
 
 ## Image-Set Continuity (FE-IMAGE-SET-CONTINUITY-01, DEFAULT)
 
-Source: taste-skill imagegen-frontend-web (62k stars), adapted for codexclaw ima2 workflow.
+Source: taste-skill imagegen-frontend-web, adapted for codexclaw ima2 workflow.
 
 Multi-image sets for landing/marketing pages must maintain visual-world continuity
 across all frames. A viewer flipping through every per-section frame must still

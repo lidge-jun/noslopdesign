@@ -3,8 +3,8 @@ name: noslop-frontend
 description: >-
   noslopdesign frontend: build, redesign or fix web pages and app screens so they do not look AI-made.
   Use for SaaS homepages, landing pages, marketing sites, product pages, dashboards, admin and CRUD
-  screens, mobile layouts and UI bug fixes in any stack (HTML/CSS, React, Next.js, Vue, Svelte, Astro,
-  Tailwind). Covers layout, typography, color, motion, assets, accessibility and a real-browser check
+  screens, mobile layouts and UI bug fixes (HTML/CSS, React, Next.js, Svelte, Astro, Tailwind, React
+  Native/Expo). Covers layout, typography, color, motion, assets, accessibility and a real-browser check
   before delivery, and pulls in noslop-uiux on its own when the brief is vague. Triggers: make a SaaS
   homepage, make it look good, redesign, landing page, dashboard, responsive, anti-slop, AI-looking UI,
   홈페이지 만들어줘, 멋있게, 랜딩페이지, 대시보드, 반응형, 디자인 수정, 프론트엔드, UI 작업.

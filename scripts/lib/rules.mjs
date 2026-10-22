@@ -69,6 +69,19 @@ export const REWRITES = [
   ['(per search skill)', '(with a current web search)'],
   ['DEFAULT — ponytail discipline applied to UX', 'DEFAULT — minimum-choice discipline applied to UX'],
   ['existence the ponytail way, in order', 'existence, in order'],
+  // Section pointers into the old, longer SKILL.md and the CodexClaw dev skill, written without backticks.
+  ['Optional for ≤5-line patches — see dev §0.1 Patch Fast-Path.', 'Optional for ≤5-line patches (work sizes C0/C1 in `noslop-frontend/SKILL.md`).'],
+  ['Rule classes (dev §0.2)', 'Rule classes (`noslop-frontend/SKILL.md`)'],
+  [/\(SKILL §(5|7|8|12|13)\)/g, (_, n) => ({ 5: '(`anti-slop-enforcement.md` §5)', 7: '(`a11y-patterns.md` Focus Management)', 8: '(`platform-runtime.md` §8)', 12: '(`platform-runtime.md` §12)', 13: '(`platform-runtime.md` §13)' })[n]],
+  ['The compact flow in SKILL.md §1', 'The compact flow in `intent-discovery.md`'],
+  ['The composite kit behind SKILL.md §1 UX-DEFAULT-ISM-01', 'The composite kit behind `intent-discovery.md` UX-DEFAULT-ISM-01'],
+  // Codex-only tool names and CodexClaw-only rule IDs.
+  ['3. **Inspect**: `view_image` every candidate.', "3. **Inspect**: open every candidate in the agent's image viewer."],
+  [/`view_image`/g, "the agent's image viewer"],
+  [' (FAMILY-SLOP-01)', ''],
+  ['; load it with `ima2 skill front ref asset-requirements` when ima2 is available.', '.'],
+  // Star counts go stale.
+  [/ \(\d+k stars(?:, [^)]*)?\)/g, ''],
 ];
 
 export function rewrite(text) {
@@ -91,6 +104,10 @@ export const LEFTOVERS = [
   /`dev`/,
   /\bponytail\b/,
   /per search skill/,
+  /\bdev §/,
+  /\bSKILL(?:\.md)? §\d/,
+  /`view_image`/,
+  /\bima2 skill\b/,
 ];
 
 // Provenance lines may name the upstream project.

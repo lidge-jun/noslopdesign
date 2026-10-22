@@ -33,7 +33,7 @@ Concept mockups use [ima2-gen](https://github.com/lidge-ai/ima2-gen) when it is 
 references say `$imagegen`, read it as the agent's own image tool: Codex `$imagegen`, or any image
 generation tool or MCP server in Claude Code and other agents.
 
-Use browser fetch/open/text/get-dom/snapshot only after candidate URLs exist.
+Look up product references on the web only after you have candidate URLs; do not browse blind.
 
 ## Modular References
 
