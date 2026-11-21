@@ -10,7 +10,7 @@ import { execFileSync } from 'node:child_process';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const STAGE = process.argv[2];
 const OUT = join(ROOT, 'docs/compare');
-const LINT = join(ROOT, 'skills/noslop-frontend/scripts/sloplint.mjs');
+const LINT = join(ROOT, 'skills/noslop-design/scripts/sloplint.mjs');
 const data = JSON.parse(readFileSync(join(STAGE, 'meta.json'), 'utf8'));
 const CONDS = [
   { id: 'vanilla', name: 'No skill', note: 'Same model, same harness, no design skill loaded' },

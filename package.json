@@ -1,12 +1,12 @@
 {
   "name": "noslopdesign",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
-  "description": "Anti-slop frontend and UI/UX skills for coding agents.",
+  "description": "Anti-slop design skill for coding agents: direction, copy, build and audit.",
   "license": "MIT",
   "scripts": {
     "check": "node tests/check.mjs && node --test tests/sloplint.test.mjs",
-    "lint:page": "node skills/noslop-frontend/scripts/sloplint.mjs",
+    "lint:page": "node skills/noslop-design/scripts/sloplint.mjs",
     "sync": "node scripts/sync-from-codexclaw.mjs"
   },
   "devDependencies": {

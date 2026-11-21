@@ -2,16 +2,16 @@
 
 [English](README.md) | **한국어**
 
-코딩 에이전트가 "AI가 만든 티 나는 페이지"를 내놓지 않게 하는 Agent Skill 두 개입니다. 가운데 정렬
-헤드라인, 보라에서 파랑으로 가는 그라데이션, 아이콘 카드 세 개, 근거 없는 "10,000+ 팀이 사용 중" 같은
-것들이요. 평소처럼 요청하면 에이전트가 방향을 정하고, 실제 콘텐츠와 에셋으로 만들고, 실제 브라우저에서
+코딩 에이전트가 "AI가 만든 티 나는 페이지"를 내놓지 않게 하는 Agent Skill 하나입니다. 보라에서
+파랑으로 가는 그라데이션, 카드마다 붙은 한쪽 색 막대, 아이콘 타일 카드 세 개, 근거 없는 "10,000+ 팀이
+사용 중" 같은 것들이요. 평소처럼 요청하면 에이전트가 방향을 정하고, 실제 콘텐츠와 에셋으로 만들고, 실제 브라우저에서
 결과를 확인한 뒤에야 끝났다고 말합니다.
 
 ```text
-$noslop-frontend SaaS 홈페이지 멋있게 만들어줘
-$noslop-frontend 이 대시보드 너무 AI 같아, 고쳐줘
-$noslop-frontend 랜딩페이지 모바일에서 깨지는 거 잡아줘
-$noslop-uiux 가계부 앱 만들기 전에 브랜드 방향부터 잡아줘
+$noslop-design SaaS 홈페이지 멋있게 만들어줘
+$noslop-design 이 대시보드 너무 AI 같아, 고쳐줘
+$noslop-design 랜딩페이지 모바일에서 깨지는 거 잡아줘
+$noslop-design 가계부 앱 만들기 전에 브랜드 방향부터 잡아줘
 ```
 
 이름을 부르지 않아도 됩니다. "SaaS 홈페이지 만들어줘", "리디자인", "멋있게" 같은 요청이면 스킬 설명이
@@ -19,16 +19,17 @@ $noslop-uiux 가계부 앱 만들기 전에 브랜드 방향부터 잡아줘
 
 | 설치 방식 | Codex | Claude Code |
 |---|---|---|
-| `npx skills` 또는 `install.sh` | `$noslop-frontend …` | `/noslop-frontend …` |
-| 플러그인 마켓플레이스 | `$noslopdesign:noslop-frontend …` | `/noslopdesign:noslop-frontend …` |
+| `npx skills` 또는 `install.sh` | `$noslop-design …` | `/noslop-design …` |
+| 플러그인 마켓플레이스 | `$noslopdesign:noslop-design …` | `/noslopdesign:noslop-design …` |
 
-| 스킬 | 언제 쓰나 | 하는 일 |
+| 모드 | 언제 쓰나 | 하는 일 |
 |---|---|---|
-| `noslop-frontend` | 페이지나 앱 화면을 만들거나, 리디자인하거나, 고칠 때 | 화면 종류, 밀도, 언어권, 필요한 에셋을 분류하고 쓰는 스택으로 구현한 뒤 세 가지 폭에서 렌더링해 slop 항목에 걸리면 다시 고칩니다. 요청이 모호하면 `noslop-uiux`를 알아서 불러옵니다. |
-| `noslop-uiux` | 코드 전에 방향을 정할 때 | "깔끔하게" 같은 요청에서 의도 찾기, Design Read, 콘셉트 시안, 디자인 시스템, 타이포그래피, 내비게이션, 온보딩·빈 화면·에러 상태, 로고와 파비콘. |
+| 방향 | 코드 전에 생김새를 정할 때 | "깔끔하게" 같은 요청에서 의도 찾기, Design Read, 콘셉트 시안, 디자인 시스템, 타이포그래피, 내비게이션, 온보딩·빈 화면·에러 상태, 로고와 파비콘. |
+| 카피 | 화면의 글을 쓸 때 | 브리프에서 사실 목록 만들기, 문체 고르기(블라인드 A/B로 검증한 한국어 마케팅 문체 포함), 짧은 헤드라인과 버튼, AI 티 점검. |
+| 빌드 | 페이지나 앱 화면을 만들거나 고칠 때 | 화면 종류, 밀도, 언어권, 에셋을 분류하고 쓰는 스택으로 구현한 뒤 세 가지 폭에서 렌더링합니다. |
+| 감사 | 왜 AI 같아 보이는지 찾을 때 | 정적·렌더 lint(`ui-lint`, `copy-lint`, `sloplint`), 제조사 가이드와 deslop 프로젝트에서 모은 슬롭 목록, 위반 기록표. |
 
-보통은 `noslop-frontend`로 시작하면 됩니다. 페이지를 만들기 전에 방향, 크리틱, 디자인 시스템만
-필요할 때 `noslop-uiux`를 쓰세요.
+0.2의 `noslop-frontend`, `noslop-uiux`도 그대로 동작하며 `noslop-design`으로 연결됩니다.
 
 ## 설치
 
@@ -36,8 +37,7 @@ $noslop-uiux 가계부 앱 만들기 전에 브랜드 방향부터 잡아줘
 npx skills add https://github.com/lidge-jun/noslopdesign
 ```
 
-[`npx skills`](https://github.com/vercel-labs/skills) CLI로 두 스킬이 함께 설치됩니다. 둘 다 두세요.
-`noslop-uiux`는 작업 크기와 규칙 등급을 `noslop-frontend`에서 가져오고, 서로를 링크로 참조합니다.
+[`npx skills`](https://github.com/vercel-labs/skills) CLI로 설치됩니다.
 
 <details>
 <summary>Claude Code 플러그인</summary>
@@ -47,7 +47,7 @@ npx skills add https://github.com/lidge-jun/noslopdesign
 /plugin install noslopdesign@noslopdesign
 ```
 
-스킬은 `noslopdesign:noslop-frontend`, `noslopdesign:noslop-uiux`로 불러옵니다. `/plugin update`로 업데이트합니다.
+스킬은 `noslopdesign:noslop-design`으로 불러옵니다. `/plugin update`로 업데이트합니다.
 
 </details>
 
@@ -99,7 +99,9 @@ git clone https://github.com/lidge-jun/noslopdesign && cd noslopdesign
 스킬 없이도 린터만 따로 돌릴 수 있습니다.
 
 ```bash
-node skills/noslop-frontend/scripts/sloplint.mjs ./index.html
+node skills/noslop-design/scripts/sloplint.mjs ./index.html
+node skills/noslop-design/scripts/ui-lint.mjs ./index.html --render
+node skills/noslop-design/scripts/copy-lint.mjs ./index.html
 ```
 
 결과는 세 단계로 나뉩니다. **Floor**는 절대 내보내지 않는 것(줌 차단, 포커스 링 제거, 자리표시 문구,
@@ -108,15 +110,16 @@ node skills/noslop-frontend/scripts/sloplint.mjs ./index.html
 다듬기 항목이라 막지 않습니다. 리디자인 때는 `--inventory before.json`으로 링크·입력·핸들러·제목을
 기록하고 `--kept before.json`으로 빠진 게 있으면 실패시킵니다.
 
-모드로 작업 범위를 좁힐 수 있습니다: `$noslop-frontend audit ./index.html`, `redesign`, `polish`,
-`critique`, `bolder`, `quieter`, `harden`. 방향이 정해지면 `noslop-uiux`가 `DESIGN.md`에 적어 두어 다음
+모드로 작업 범위를 좁힐 수 있습니다: `$noslop-design audit ./index.html`, `redesign`, `polish`,
+`critique`, `bolder`, `quieter`, `harden`. 방향이 정해지면 스킬이 `DESIGN.md`에 적어 두어 다음
 실행도 같은 디자인으로 만듭니다.
 
-[`anti-slop.md`](skills/noslop-frontend/references/core/anti-slop.md)에 백 개가 넘는 항목이 있습니다. 몇 가지만 들면:
+[`anti-slop.md`](skills/noslop-design/references/build/anti-slop.md)에 백 개가 넘는 항목이 있습니다. 몇 가지만 들면:
 
 - 어디에나 Inter, 또는 "Inter 말고"의 자동 선택인 Space Grotesk.
 - 이유 없는 그라데이션 히어로, 페이지 전체를 한 색으로 물들이는 테마.
-- 가운데 히어로, 기능 카드 세 개, 로고 띠, 후기 캐러셀로 이어지는 기본 뼈대.
+- 아이콘 타일 기능 카드 세 개, 로고 띠, 후기 캐러셀로 이어지는 기본 뼈대.
+- 카드·콜아웃·필 한쪽에 붙은 색 막대, 버튼마다 다른 색.
 - 아이콘 대신 이모지, 지어낸 수치, "홍길동" 후기, 제품 대신 페이지를 설명하는 문구.
 - 라틴 폰트 기준 설정을 한글에 그대로 적용해 행간과 리듬이 무너진 경우.
 

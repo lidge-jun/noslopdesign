@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Symlink the noslopdesign skills into agent skill directories.
 #
-# Links instead of copying, so `git pull` updates the installed skills in place. Install both
-# skills: noslop-uiux reads its work sizes and rule classes from noslop-frontend.
+# Links instead of copying, so `git pull` updates the installed skills in place. noslop-design is
+# the skill; noslop-frontend and noslop-uiux are redirects kept for older installs.
 #
-#   ./install.sh                 # link both skills into Claude Code (~/.claude/skills)
+#   ./install.sh                 # link the skills into Claude Code (~/.claude/skills)
 #   ./install.sh --codex         # ... into Codex (~/.codex/skills)
 #   ./install.sh --all-agents    # ... into both
 #   ./install.sh --list          # show install names

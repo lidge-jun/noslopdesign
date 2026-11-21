@@ -1,7 +1,7 @@
 {
   "name": "noslopdesign",
-  "version": "0.2.0",
-  "description": "Anti-slop design skills for coding agents: noslop-frontend builds pages and app screens that do not look AI-made, noslop-uiux decides the direction first.",
+  "version": "0.3.0",
+  "description": "Anti-slop design for coding agents: noslop-design sets the direction, writes the copy, builds and audits pages and app screens that do not look AI-made.",
   "author": {
     "name": "lidge-jun",
     "url": "https://github.com/lidge-jun"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "noslopdesign",
     "shortDescription": "Pages and app screens that do not look AI-made.",
-    "longDescription": "Two skills from lidge-jun/noslopdesign: noslop-frontend builds, redesigns and fixes pages and app screens with a real-browser check; noslop-uiux sets the design direction, UX states and brand before code.",
+    "longDescription": "One skill from lidge-jun/noslopdesign: noslop-design sets the design direction and UX states, writes the copy, builds and fixes pages and app screens, and audits them with static and rendered lint. noslop-frontend and noslop-uiux remain as redirects.",
     "developerName": "lidge-jun",
     "category": "Design",
     "capabilities": [],

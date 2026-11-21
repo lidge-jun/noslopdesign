@@ -39,7 +39,7 @@
       <code id="cmd">npx skills add https://github.com/lidge-jun/noslopdesign</code>
       <button type="button" class="copy" data-copy="#cmd">Copy</button>
     </div>
-    <p class="try">Then try <code>$noslop-frontend SaaS 홈페이지 멋있게 만들어줘</code></p>
+    <p class="try">Then try <code>$noslop-design SaaS 홈페이지 멋있게 만들어줘</code></p>
   </div>
 
   <figure class="proof" aria-label="A generic AI hero section marked up with rule IDs">
@@ -72,16 +72,16 @@
   <h2 id="how-title">How a build runs</h2>
   <p class="section-lede">One request, six moves. The agent cannot call it done until the page has been looked at.</p>
   <div class="run">
-<pre class="term" aria-label="Example run"><span class="p">you</span>  $noslop-frontend make a SaaS homepage for a bank reconciliation tool
+<pre class="term" aria-label="Example run"><span class="p">you</span>  $noslop-design make a SaaS homepage for a bank reconciliation tool
 <span class="a">agent</span> size C3 · surface landing · locale ko+en · assets: product screenshots
-<span class="a">agent</span> brief is vague → noslop-uiux Design Read → direction locked in DESIGN.md
+<span class="a">agent</span> brief is vague → direction mode, Design Read → direction locked in DESIGN.md
 <span class="a">agent</span> build: real screenshots, one accent, Pretendard + Plex Mono for figures
 <span class="a">agent</span> sloplint ./src → 2 reflex: NS-EYEBROW, NS-BORDER-SHADOW → fixed
 <span class="a">agent</span> browser 390 / 768 / 1440 → hero wraps badly at 390 → fixed, re-shot
 <span class="ok">done</span>  checked: sloplint 0 blocking · 3 widths · keyboard pass · axe 0</pre>
     <ol class="steps">
       <li><h3>Size and route</h3><p>Copy fix or new surface; landing, app or dashboard; locale; density; which assets are real.</p></li>
-      <li><h3>Decide the direction</h3><p><code>noslop-uiux</code> turns “make it look good” into one direction and writes it to <code>DESIGN.md</code>.</p></li>
+      <li><h3>Decide the direction</h3><p>The direction mode turns “make it look good” into one direction and writes it to <code>DESIGN.md</code>.</p></li>
       <li><h3>Build with real material</h3><p>Product screenshots, real numbers, real copy. No gradient blobs standing in for a product.</p></li>
       <li><h3>Lint the tells</h3><p><code>sloplint</code> catches the static ones before a browser even opens.</p></li>
       <li><h3>Look at it</h3><p>Three widths in a real browser. Screenshots are read, not just taken.</p></li>
@@ -114,7 +114,7 @@
       <ul><li><code>NS-TEXT-WRAP</code> headings without balance</li><li><code>NS-100VH</code> use 100dvh</li><li><code>NS-TRANSITION-ALL</code></li><li><code>NS-EM-DASH</code> too many dashes</li></ul>
     </article>
   </div>
-<pre class="term small" aria-label="sloplint output">$ node skills/noslop-frontend/scripts/sloplint.mjs ./index.html
+<pre class="term small" aria-label="sloplint output">$ node skills/noslop-design/scripts/sloplint.mjs ./index.html
 [floor]  NS-ZOOM            index.html:2   Viewport blocks zoom.
 [reflex] NS-PURPLE-GRADIENT index.html:4   Purple or indigo gradient.
 [reflex] NS-BUZZWORD        index.html:5   Generated marketing verbs.
@@ -125,12 +125,12 @@ not ok - 1 file(s), 3 blocking, 0 advisory</pre>
   <h2 id="skills-title">Two skills, one front door</h2>
   <div class="pair">
     <article>
-      <h3><code>noslop-frontend</code></h3>
+      <h3><code>noslop-design</code></h3>
       <p>Builds, redesigns and fixes pages and app screens in your stack. Start here; it calls the other skill when the brief is vague.</p>
       <p class="modes">build · redesign · polish · audit · critique · bolder · quieter · harden</p>
     </article>
     <article>
-      <h3><code>noslop-uiux</code></h3>
+      <h3><code>noslop-design</code></h3>
       <p>Direction before code: intent discovery, Design Read, concept mockups, design systems, UX states, logos and favicons.</p>
       <p class="modes" lang="ko">깔끔하게 · 모던하게 · 감성적으로 · 토스 느낌 · Linear처럼</p>
     </article>
@@ -143,10 +143,10 @@ not ok - 1 file(s), 3 blocking, 0 advisory</pre>
   <table class="ways">
     <thead><tr><th scope="col">Route</th><th scope="col">Command</th><th scope="col">Call it</th></tr></thead>
     <tbody>
-      <tr><td>npx skills</td><td><code>npx skills add https://github.com/lidge-jun/noslopdesign</code></td><td><code>$noslop-frontend</code> · <code>/noslop-frontend</code></td></tr>
-      <tr><td>Claude Code</td><td><code>/plugin marketplace add lidge-jun/noslopdesign</code></td><td><code>/noslopdesign:noslop-frontend</code></td></tr>
-      <tr><td>Codex</td><td><code>codex plugin marketplace add lidge-jun/noslopdesign</code></td><td><code>$noslopdesign:noslop-frontend</code></td></tr>
-      <tr><td>Clone</td><td><code>./install.sh --all-agents</code></td><td><code>$noslop-frontend</code></td></tr>
+      <tr><td>npx skills</td><td><code>npx skills add https://github.com/lidge-jun/noslopdesign</code></td><td><code>$noslop-design</code> · <code>/noslop-design</code></td></tr>
+      <tr><td>Claude Code</td><td><code>/plugin marketplace add lidge-jun/noslopdesign</code></td><td><code>/noslopdesign:noslop-design</code></td></tr>
+      <tr><td>Codex</td><td><code>codex plugin marketplace add lidge-jun/noslopdesign</code></td><td><code>$noslopdesign:noslop-design</code></td></tr>
+      <tr><td>Clone</td><td><code>./install.sh --all-agents</code></td><td><code>$noslop-design</code></td></tr>
     </tbody>
   </table>
 </section>

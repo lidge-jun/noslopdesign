@@ -1,0 +1,5 @@
+interface:
+  display_name: "noslop-design"
+  short_description: "Direction, copy, build and audit for UI that does not look AI-made."
+policy:
+  allow_implicit_invocation: true
