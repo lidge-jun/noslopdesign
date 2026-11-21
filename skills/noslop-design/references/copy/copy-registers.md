@@ -30,6 +30,26 @@ dense lines lost every time.
 | Abstract category line | "AI 에이전트 운영의 새로운 기준" is acceptable (won c02) but loses to name + beat and 대구 | c02, r01 |
 | Hangul display tracking | -0.02 to -0.035em on 40px+ display (typography, not copy; see [korea-2026.md](../build/korea-2026.md)) | t07 |
 
+### Spec and fact lines end in nouns (all Korean registers, owner rule 2026-11-21)
+
+Specs, requirements, FAQ answers, table cells, definition lists, profile and feature
+captions, timeline notes, badges and price rows are written as 개조식: they end in a noun
+or a noun phrase, never in a verb or copula ending.
+
+| Write | Not |
+|---|---|
+| 512GB 이상 권장 | 512GB 이상을 권장한다 / 권장합니다 |
+| 미지원 | 지원하지 않는다 / 지원하지 않아요 |
+| PS5, Xbox Series X\|S 전용 | PS5와 Xbox Series X\|S에서만 할 수 있다 |
+| 기기별 최대 212GB | 기기에 따라 최대 212GB가 필요하다 |
+| 최근 출소 | 교도소에서 막 나왔다 |
+| 이후 일정 변경 없음 | 이 날짜는 그대로 지켜졌다 |
+
+Narrative prose (a section lead, a story paragraph) keeps full sentences, and headlines
+follow the owner register above. `copy-lint` reports a verb ending in a table cell,
+definition, list item, caption or `<small>` of 60 characters or less as
+`copy-spec-ending-ko` ([copy tells](copy-tells.md)).
+
 Note on the brand closer ("동네를 여는 문, 당근" shape): the owner chose no brand at the end
 in c05. Use name + beat (brand first) instead.
 
@@ -57,21 +77,6 @@ Patterns worth borrowing (from the capture):
 
 Where the owner differs from Apple: no trailing period, plain over witty, negative tracking
 on large Hangul. The owner's choice governs owner surfaces.
-
-## 7. Spec, feature and fact lines (Korean)
-
-Owner rule (2026-11-21): spec sheets, requirement tables, feature rows, footers and labels end
-on the noun or a noun-form ending, never on a sentence ending.
-
-| Write | Not |
-|---|---|
-| 저장 공간 512GB 이상 권장 | 저장 공간은 512GB 이상 권장이다 / 권장합니다 |
-| 한국어 음성·자막 지원 | 한국어 음성과 자막을 지원한다 / 지원합니다 |
-| Nintendo Switch 2 전용 | Nintendo Switch 2 전용입니다 |
-| 설정에서 원작 배치로 되돌리기 가능 | 되돌릴 수 있습니다 |
-
-Applies to `dt`/`dd`, table cells, list items, badges, captions and legal footers. Body
-sentences and headline beats follow their own register. Lint id `copy-spec-ending-ko`.
 
 ## 2. Product and app UI microcopy
 
