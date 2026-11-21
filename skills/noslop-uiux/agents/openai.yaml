@@ -1,5 +1,5 @@
 interface:
   display_name: "noslop-uiux"
-  short_description: "Design direction, UX states, typography and brand before code."
+  short_description: "Deprecated alias for noslop-design."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

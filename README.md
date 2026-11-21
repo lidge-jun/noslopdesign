@@ -2,33 +2,35 @@
 
 **English** | [한국어](README.ko.md)
 
-Two Agent Skills that stop coding agents from shipping the average AI page: the centered headline,
-the purple-to-blue gradient, the row of three icon cards, the fake "10,000+ teams" stat. Ask for a
+One Agent Skill that stops coding agents from shipping the average AI page: the purple-to-blue
+gradient, the colored bar down the side of every card, the row of three icon tiles, the fake "10,000+
+teams" stat. Ask for a
 page the way you normally would and the agent picks a direction, builds it with real content and
 assets, and checks the result in a real browser before it calls the job done.
 
 ```text
-$noslop-frontend make a SaaS homepage that looks great
-$noslop-frontend SaaS 홈페이지 멋있게 만들어줘
-$noslop-frontend this dashboard looks AI-made, fix it
-$noslop-uiux pick a brand direction for our budgeting app before we build anything
+$noslop-design make a SaaS homepage that looks great
+$noslop-design SaaS 홈페이지 멋있게 만들어줘
+$noslop-design this dashboard looks AI-made, fix it
+$noslop-design pick a brand direction for our budgeting app before we build anything
 ```
 
-Plain requests work too: the skill descriptions trigger on "make a SaaS homepage", "redesign",
-"멋있게" and similar. To call a skill by name:
+Plain requests work too: the skill description triggers on "make a SaaS homepage", "redesign",
+"멋있게" and similar. To call it by name:
 
 | Installed with | Codex | Claude Code |
 |---|---|---|
-| `npx skills` or `install.sh` | `$noslop-frontend …` | `/noslop-frontend …` |
-| Plugin marketplace | `$noslopdesign:noslop-frontend …` | `/noslopdesign:noslop-frontend …` |
+| `npx skills` or `install.sh` | `$noslop-design …` | `/noslop-design …` |
+| Plugin marketplace | `$noslopdesign:noslop-design …` | `/noslopdesign:noslop-design …` |
 
-| Skill | Use it to | What it does |
+| Mode | Use it to | What it does |
 |---|---|---|
-| `noslop-frontend` | Build, redesign or fix a page or app screen | Routes the work by surface, density, locale and asset needs, builds it in your stack, then renders it at three widths and fails it on slop. Loads `noslop-uiux` by itself when the brief is vague. |
-| `noslop-uiux` | Decide the direction before code | Intent discovery for briefs like "make it clean", Design Read, concept mockups, design systems, typography, navigation, onboarding/empty/error states, logos and favicons. |
+| Direction | Decide the look before code | Intent discovery for briefs like "make it clean", Design Read, concept mockups, design systems, typography, navigation, onboarding/empty/error states, logos and favicons. |
+| Copy | Write the words | A fact sheet from your brief, a register (including a Korean marketing register tested with blind A/B), short headlines and CTAs, and a tell check. |
+| Build | Build, redesign or fix a page or app screen | Routes by surface, density, locale and asset needs, builds it in your stack, then renders it at three widths. |
+| Audit | Find why it looks AI-made | Static and rendered lint (`ui-lint`, `copy-lint`, `sloplint`), a slop consensus list from vendor guides and deslop projects, and a violation ledger. |
 
-Start with `noslop-frontend`. Reach for `noslop-uiux` when you want direction, critique or a design
-system without writing the page yet.
+`noslop-frontend` and `noslop-uiux` from 0.2 still work; they now point to `noslop-design`.
 
 ## Install
 
@@ -36,9 +38,7 @@ system without writing the page yet.
 npx skills add https://github.com/lidge-jun/noslopdesign
 ```
 
-That installs both skills with the [`npx skills`](https://github.com/vercel-labs/skills) CLI. Keep
-both: `noslop-uiux` reads its work sizes and rule classes from `noslop-frontend`, and each links
-into the other.
+That installs the skill with the [`npx skills`](https://github.com/vercel-labs/skills) CLI.
 
 <details>
 <summary>Claude Code plugin</summary>
@@ -48,7 +48,7 @@ into the other.
 /plugin install noslopdesign@noslopdesign
 ```
 
-The skills load as `noslopdesign:noslop-frontend` and `noslopdesign:noslop-uiux`. `/plugin update` upgrades them.
+The skill loads as `noslopdesign:noslop-design`. `/plugin update` upgrades it.
 
 </details>
 
@@ -101,7 +101,9 @@ machine: [lidge-jun.github.io/noslopdesign/compare](https://lidge-jun.github.io/
 Run the linter on any page, with or without the skill:
 
 ```bash
-node skills/noslop-frontend/scripts/sloplint.mjs ./index.html
+node skills/noslop-design/scripts/sloplint.mjs ./index.html
+node skills/noslop-design/scripts/ui-lint.mjs ./index.html --render
+node skills/noslop-design/scripts/copy-lint.mjs ./index.html
 ```
 
 It sorts findings into three tiers. **Floor** never ships (blocked zoom, removed focus ring,
@@ -111,16 +113,17 @@ gradient text, Inter-only, buzzwords, vanity metrics); keep one only with a writ
 `--inventory before.json` records every link, field, handler and heading, and `--kept before.json`
 fails if one went missing.
 
-Modes narrow the job: `$noslop-frontend audit ./index.html`, `redesign`, `polish`, `critique`,
-`bolder`, `quieter`, `harden`. Once a direction is chosen, `noslop-uiux` writes it to `DESIGN.md` so the
+Modes narrow the job: `$noslop-design audit ./index.html`, `redesign`, `polish`, `critique`,
+`bolder`, `quieter`, `harden`. Once a direction is chosen, the skill writes it to `DESIGN.md` so the
 next run builds the same design.
 
-The catalog in [`anti-slop.md`](skills/noslop-frontend/references/core/anti-slop.md) covers more than
+The catalog in [`anti-slop.md`](skills/noslop-design/references/build/anti-slop.md) covers more than
 a hundred tells. A few of them:
 
 - Inter everywhere, or Space Grotesk as the automatic "not Inter".
 - A gradient hero with no reason to exist, or one hue tinting the entire page.
-- Centered hero, three feature cards, logo strip, testimonial carousel: the default page skeleton.
+- Three icon-tile feature cards, logo strip, testimonial carousel: the default page skeleton.
+- A colored bar down one side of cards, callouts or pills; buttons in a different hue each.
 - Emoji as icons, fake metrics, "Jane Doe" testimonials, copy that describes the page instead of the product.
 - Latin font choices applied to Hangul without checking line height and rhythm.
 

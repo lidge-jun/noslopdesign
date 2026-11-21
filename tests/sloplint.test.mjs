@@ -9,7 +9,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const LINT = join(ROOT, 'skills/noslop-frontend/scripts/sloplint.mjs');
+const LINT = join(ROOT, 'skills/noslop-design/scripts/sloplint.mjs');
 const run = (...a) => { try { return { code: 0, out: execFileSync('node', [LINT, ...a], { encoding: 'utf8' }) }; } catch (e) { return { code: e.status, out: String(e.stdout) }; } };
 
 test('slop fixture fails with floor and reflex findings', () => {

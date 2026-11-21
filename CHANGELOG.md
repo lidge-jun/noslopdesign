@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0
+
+- One skill: `noslop-design` merges `noslop-frontend` and `noslop-uiux` (upstream CodexClaw merged `cxc-dev-frontend` and `cxc-dev-uiux-design` into `cxc-dev-design`). The old names stay as redirects.
+- Modes: direction, copy, build, audit. References now live under `references/direction`, `references/build`, `references/copy` and `references/stacks`.
+- New: copy module (fact sheet, registers including a Korean marketing register tested with blind A/B, tells as caps), slop consensus 2026 (stacking rule, cross-source tells, second-order default palettes), neutral controls and no one-sided accent bars, centered short heroes with a counterweight rule for left alignment, Baseline 2026 platform features, agent action UX.
+- New lint: `scripts/ui-lint.mjs` and `scripts/copy-lint.mjs` (zero dependencies, optional `--render`), alongside `sloplint.mjs`.
+
 ## 0.2.0
 
 - `scripts/sloplint.mjs`: dependency-free static lint with Floor/Reflex/Finish tiers, `noslop-allow` excuses, and `--inventory`/`--kept` for redesigns.

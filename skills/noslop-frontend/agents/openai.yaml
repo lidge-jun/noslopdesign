@@ -1,5 +1,5 @@
 interface:
   display_name: "noslop-frontend"
-  short_description: "Build and fix pages and app screens that do not look AI-made."
+  short_description: "Deprecated alias for noslop-design."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
